@@ -11,9 +11,11 @@ export interface ITheme {
   '--line-control-100': string;
   '--line-base-emp': string;
   '--line-primary': string;
+  '--line-primary-emp': string;
   '--line-success': string;
   '--line-danger': string;
   '--line-secondary': string;
+  
 
   '--bg-base': string;
 

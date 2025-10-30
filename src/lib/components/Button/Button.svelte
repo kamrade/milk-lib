@@ -71,7 +71,7 @@
     --inner-gap: 4px;
     --border-width: 1px;
     --border-color: transparent;
-    --hover-border-color: var(--line-base);
+    --hover-border-color: var(--border-color);
     --active-border-color: var(--border-color);
     --disabled-border-color: var(--border-color);
     --focus-color: var(--background-color);

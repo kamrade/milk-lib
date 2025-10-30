@@ -11,6 +11,7 @@ export const themeDefault: ITheme = {
   '--line-control-100': '#ABABB0',
   '--line-base-emp': '#151617',
   '--line-primary': '#FFE27B',
+  '--line-primary-emp': '#F0C013',
   '--line-success': '#B6F7CB',
   '--line-danger': '#FBC4BF',
   '--line-secondary': '#BEB6F9',

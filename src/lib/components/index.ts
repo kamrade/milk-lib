@@ -4,3 +4,4 @@ export * from './StickyHeader';
 export * from './Sidebar';
 export * from './ThemeProvider';
 export * from './Button';
+export * from './ButtonMilk';
