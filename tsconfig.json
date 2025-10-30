@@ -10,6 +10,13 @@
 		"sourceMap": true,
 		"strict": true,
 		"module": "ESNext",
-		"moduleResolution": "Bundler"
+		"moduleResolution": "Bundler",
+		"baseUrl": ".",
+		"paths": {
+			"$layout": ["src/layout/index.ts", "src/layout"],
+			"$layout/*": ["src/layout/*"],
+			"$lib": ["src/lib/index.ts", "src/lib"],
+			"$lib/*": ["src/lib/*"]
+		}
 	}
 }

@@ -36,6 +36,7 @@
   });
 
   $effect(() => {
+
     const delta = scrollY - lastY;
 
     // всегда показываем у самого верха

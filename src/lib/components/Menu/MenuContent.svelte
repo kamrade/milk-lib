@@ -9,9 +9,9 @@
 
 <style>
   .MenuContent {
-    border: 1px solid #ddd;
+    border: 1px solid var(--line-base);
     padding: .25rem;
-    background-color: white;
+    background-color: var(--bg-base);
     border-radius: 12px;
     box-shadow: 0 0 40px rgba(0, 0, 0, 0.09);
   }

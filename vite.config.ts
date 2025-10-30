@@ -31,5 +31,11 @@ export default defineConfig({
 				}
 			}
 		]
+	},
+	resolve: {
+		alias: {
+			$lib: '/src/lib',
+			$layout: '/src/layout'
+		}
 	}
 });

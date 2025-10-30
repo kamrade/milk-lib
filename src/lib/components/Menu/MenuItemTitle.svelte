@@ -16,6 +16,6 @@
     text-transform: uppercase;
     letter-spacing: 0.5px;
     font-weight: 500;
-    color: #777;
+    color: var(--text-base-muted);
   }
 </style>

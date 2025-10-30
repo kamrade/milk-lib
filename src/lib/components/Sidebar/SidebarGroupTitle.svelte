@@ -7,9 +7,10 @@
 
 <style>
   .SidebarGroupTitle {
-    font-size: 12px;
-    color: #333;
+    font-size: 14px;
+    color: var(--text-base-main);
     font-weight: 500;
     margin-top: 1.5rem;
+    list-style: none;
   }
 </style>

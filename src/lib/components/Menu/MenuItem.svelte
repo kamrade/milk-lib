@@ -17,6 +17,6 @@
   }
 
   .MenuItem:hover {
-    background: #ccc;
+    background: var(--bg-base-100);
   }
 </style>
