@@ -5,9 +5,7 @@
   <StickyHeader>
 		<header class="header">
 			<div class="container">
-				<div class="flex gap-6">
-					<h1 class="title-h1">Milk KIT</h1>
-				</div>
+				<h1 class="title-h1">Milk KIT</h1>
 			</div>
 		</header>
 	</StickyHeader>

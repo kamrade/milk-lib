@@ -1,15 +1,15 @@
 <script lang="ts">
 
-  import { vars } from './ThemeDefault';
 	import type { Snippet } from 'svelte';
+  import type { ITheme } from './ThemeProvider.types'
+
+  let { children, theme } : { children: Snippet, theme : ITheme } = $props();
 
   let cssVars = $derived.by(() => {
-    return Object.entries(vars)
+    return Object.entries(theme)
       .map((([k,v]) => `${k}:${v}`))
       .join(';');
   });
-
-  let { children } : { children: Snippet } = $props();
 
 </script>
 

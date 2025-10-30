@@ -4,6 +4,7 @@
 	import favicon from '$lib/assets/favicon.svg';
 	import { type INavigationItem } from './nav-data';
 	import { Header } from '$layout';
+	import { themeDefault } from '$lib/components/ThemeProvider/ThemeDefault';
 
 	import { SidebarGroupTitle, SidebarLink, ThemeProvider } from "$lib";
 
@@ -14,7 +15,7 @@
 	<link rel="icon" href={favicon} />
 </svelte:head>
 
-<ThemeProvider>
+<ThemeProvider theme={themeDefault}>
 	<div class="onest-font-default">
 		<Header/>
 

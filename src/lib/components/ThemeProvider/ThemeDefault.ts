@@ -1,6 +1,6 @@
-import type { IThemeVars } from "./ThemeProvider.types";
+import type { ITheme } from "./ThemeProvider.types";
 
-export let vars: IThemeVars = {
+export const themeDefault: ITheme = {
   '--panel-base': '#f3f5f6',
   '--panel-primary': '#FFF9E5',
   '--panel-success': '#DDF9E6',

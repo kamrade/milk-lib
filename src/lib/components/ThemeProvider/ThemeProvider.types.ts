@@ -1,6 +1,6 @@
 export type ThemeVars = Record<string, string | number>;
 
-export interface IThemeVars {
+export interface ITheme {
   '--panel-base': string;
   '--panel-primary': string;
   '--panel-success': string;
