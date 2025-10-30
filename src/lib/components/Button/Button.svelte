@@ -19,6 +19,7 @@
     children,
     style,
     iconButton,
+    dataVariant,
     ...rest
   }: IButtonProps = $props();
 
@@ -33,6 +34,7 @@
   class={`Button ${iconButton ? 'Button-icon' : ''} ${classNames ? classNames : ''}`}
   class:block={block}
   class:loading={loading}
+  {...(dataVariant ? { 'data-variant': dataVariant } : {})}
 >
   {@render children?.()}
   <span class="loader">

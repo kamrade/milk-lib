@@ -21,4 +21,5 @@ export interface IButtonProps {
   style?: string;
   children: Snippet;
   iconButton?: boolean;
+  dataVariant?: string;
 }

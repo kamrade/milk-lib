@@ -1,11 +1,11 @@
-.Button.Button-base-emphasis {
+.Button.Button-base-emphasis[data-variant="milk"] {
 --background-color: var(--bg-base-emp-100);
 --hover-background: var(--bg-base-emp-200);
 --active-background: var(--bg-base-emp-300);
 --color: white
 }
 
-.Button.Button-base-outlined {
+.Button.Button-base-outlined[data-variant="milk"] {
 --background-color: transparent;
 --hover-background: var(--bg-base-200);
 --active-background: var(--bg-base-300);
@@ -14,7 +14,7 @@
 --focus-color: var(--line-base-emp);
 }
 
-.Button.Button-base-contained {
+.Button.Button-base-contained[data-variant="milk"] {
 --background-color: var(--bg-base-100);
 --hover-background: var(--bg-base-200);
 --active-background: var(--bg-base-300);
@@ -22,7 +22,7 @@
 --focus-color: var(--line-base-emp);
 }
 
-.Button.Button-primary-contained {
+.Button.Button-primary-contained[data-variant="milk"] {
   --background-color: var(--bg-primary-100);
   --hover-background: var(--bg-primary-200);
   --active-background: var(--bg-primary-300);
@@ -30,7 +30,7 @@
   --focus-color: var(--line-primary-emp);
 }
 
-.Button.Button-primary-outlined {
+.Button.Button-primary-outlined[data-variant="milk"] {
   --background-color: transparent;
   --hover-background: var(--bg-primary-100);
   --active-background: var(--bg-primary-200);
@@ -39,14 +39,14 @@
   --focus-color: var(--line-primary-emp);
 }
 
-.Button.Button-primary-emphasis {
+.Button.Button-primary-emphasis[data-variant="milk"] {
   --background-color: var(--bg-primary-emp-100);
   --hover-background: var(--bg-primary-emp-200);
   --active-background: var(--bg-primary-emp-300);
   --color: var(--text-base-main);
 }
 
-.Button.Button-lg {
+.Button.Button-lg[data-variant="milk"] {
 --padding-y: 7px; 
 --padding-x: 20px; 
 --font-size: 16px; 
@@ -58,7 +58,7 @@
     --padding-x: 11px;
   }
 }
-.Button.Button-md {
+.Button.Button-md[data-variant="milk"] {
 --padding-y: 5px; 
 --padding-x: 16px; 
 --font-size: 14px; 
@@ -70,7 +70,7 @@
     --padding-x: 8px;
   }
 }
-.Button.Button-sm {
+.Button.Button-sm[data-variant="milk"] {
 --padding-y: 5px;
 --padding-x: 10px; 
 --font-size: 12px; 

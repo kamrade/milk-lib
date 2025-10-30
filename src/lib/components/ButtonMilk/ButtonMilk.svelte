@@ -34,7 +34,9 @@
 
 <Button
   bind:this={buttonRef}
+  dataVariant="milk"
   {classNames}
+  
   {...rest}
 >
   {@render children?.()}
