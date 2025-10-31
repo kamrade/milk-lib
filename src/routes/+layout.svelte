@@ -62,6 +62,10 @@
 		gap: .5rem;
 	}
 
+	.workspace {
+		flex-grow: 1;
+	}
+
 	.aside {
 		padding: 1rem 0;
 	}

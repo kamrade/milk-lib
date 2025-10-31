@@ -1,6 +1,7 @@
 <script lang="ts">
-  import { Menu, MenuContent, MenuItem, MenuItemTitle } from "$lib";
+  import { Menu, MenuContent, MenuItem, MenuItemTitle, ButtonMilk } from "$lib";
   import { menuLinks } from './data';
+  import { PageTitle, Divider } from '$layout';
 
 	let label = "Выберите город";
 	let menuWrapperElementHover: HTMLDivElement;
@@ -17,17 +18,17 @@
 	};
 </script>
 
-<h1>Menu</h1>
+<PageTitle>Menu. Show on click</PageTitle>
+<Divider/>
 
 <div class={`dropdown-toggler ${isHoverMenuVisible ? "dropdown-toggler-hover" : ""}`}
   bind:this={menuWrapperElementHover}
   role="button" tabindex="-1"
 >
 
-  <button onclick={mouseEnterHandler} class="dropdown-toggler-text bg-gray-800 hover:bg-gray-700 text-white font-medium py-2 px-4 rounded-lg transition" >
-    {label}
-  </button>
 
+  <ButtonMilk onClick={mouseEnterHandler} variant="primary-emphasis" size="lg">{label}</ButtonMilk>
+  
   <Menu
     bind:menuElement={menuHoverElement}
     appearanceOnHover={false}

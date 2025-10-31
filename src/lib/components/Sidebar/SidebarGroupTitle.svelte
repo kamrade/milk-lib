@@ -8,9 +8,11 @@
 <style>
   .SidebarGroupTitle {
     font-size: 14px;
+    line-height: 20px;
     color: var(--text-base-main);
     font-weight: 500;
-    margin-top: 1.5rem;
     list-style: none;
+    margin-top: 1.5rem;
+    margin-bottom: .5rem;
   }
 </style>

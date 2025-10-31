@@ -17,7 +17,11 @@
 
   .SidebarLink {
     font-size: 14px;
-    color: var(--text-base-muted);
+    line-height: 20px;
+    color: var(--text-base-placeholder);
+    text-decoration: none;
+    display: block;
+    margin-bottom: .5rem;
   }
 
   .SidebarLink:hover {
