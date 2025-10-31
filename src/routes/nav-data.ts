@@ -9,6 +9,8 @@ export type INavigationItem = {
 
 export const navigationData: INavigationItem[] = [
   { type: 'link', label: 'Home', link: '/' },
+  { type: 'heading', label: 'Badge' },
+  { type: 'link', label: 'Badge', link: '/showcase/badge' },
   { type: 'heading', label: 'Basic' },
   { type: 'link', label: 'Menu', link: '/showcase/menu-on-click' },
   { type: 'heading', label: 'Button' },
