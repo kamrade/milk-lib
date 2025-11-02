@@ -81,6 +81,7 @@ export interface ITheme {
   '--border-radius-panel': string;
   '--border-radius-window': string;
 
+  '--stroke-base': string;
   '--stroke-button': string;
 
   '--spacing-xs-1': string;
