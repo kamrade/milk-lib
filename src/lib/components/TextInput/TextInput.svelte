@@ -77,23 +77,23 @@
     --border-radius: 8px;
 
     --border-style: solid;
-    --border-width: 1px;
-    --border-top-width: var(--stroke-base);
-    --border-bottom-width: var(--stroke-base);
-    --border-left-width: var(--stroke-base);
-    --border-right-width: var(--stroke-base);
+    --border-width: var(--stroke-base); //+
+    --border-top-width: var(--border-width); //-
+    --border-bottom-width: var(--border-width); //-
+    --border-left-width: var(--border-width); //-
+    --border-right-width: var(--border-width); //-
 
 
     // Base colors
-    --focus-shadow: var(--line-base-emp);
-    --text-color: var(--text-base-main);
-    --background-color: var(--bg-base);
-    --border-color: var(--line-control-100);
-    --border-color-focus: var(--line-base-emp);
+    --focus-shadow: var(--line-base-emp); //+
+    --text-color: var(--text-base-main); //+
+    --background-color: var(--bg-base);  //+
+    --border-color: var(--line-control-100); //+
+    --border-color-focus: var(--line-base-emp); //+
     
     // Disabled
-    --background-disabled: var(--bg-base-100);
-    --border-color-disabled: var(--border-color);
+    --background-disabled: var(--bg-base-100); //+
+    --border-color-disabled: var(--line-base); //+
     --opacity-disabled: 0.8;
 
     --border-style-disabled: var(--border-style);
@@ -127,12 +127,14 @@
   }
 
   .TextInput {
+    box-sizing: border-box;
     background: var(--background-color);
     border-radius: var(--border-radius);
     font-size: var(--font-size);
     line-height: var(--line-height);
     padding: var(--padding-y) var(--padding-x);
     width: 100%;
+    display: block;
     position: relative;
     border: var(--border-width) var(--border-style) var(--border-color);
     border-top-width: var(--border-top-width);
@@ -151,7 +153,7 @@
     }
 
     &::placeholder {
-      color: var(--color-gray-500);
+      color: var(--text-base-placeholder);
     }
 
     &:read-only {

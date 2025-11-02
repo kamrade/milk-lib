@@ -16,4 +16,9 @@ export const navigationData: INavigationItem[] = [
   { type: 'heading', label: 'Button' },
   { type: 'link', label: 'Button Primitive', link: '/showcase/button-primitive' },
   { type: 'link', label: 'Button Milk', link: '/showcase/button-milk' },
+  { type: 'heading', label: 'TextInput' },
+  { type: 'link', label: 'TextInput Primitive', link: '/showcase/text-input-primitive' },
+  { type: 'link', label: 'TextInput Primitive Actions', link: '/showcase/text-input-primitive-actions' },
+  { type: 'link', label: 'TextInput with label', link: '/showcase/text-input-with-label' },
+  { type: 'link', label: 'TextInput autofocus', link: '/showcase/text-input-autofocus' },
 ]

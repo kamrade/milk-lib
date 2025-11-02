@@ -1,3 +1,4 @@
+import type { Snippet } from "svelte";
 import type { ChangeEventHandler, FocusEventHandler, KeyboardEventHandler, MouseEventHandler } from "svelte/elements";
 
 export type TextInputType = "text" | "password";
@@ -28,4 +29,11 @@ export interface ITextInputProps {
   ariaHasPopup?: "dialog" | "menu" | "listbox" | "tree" | "grid" | null | undefined;
   ariaExpanded?: boolean;
   ariaControls?: string;
+}
+
+export type ITextInputMessageVariant = 'default' | 'error';
+
+export interface ITextInputMessageProps {
+  variant?: ITextInputMessageVariant;
+  children: Snippet;
 }

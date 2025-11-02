@@ -7,3 +7,4 @@ export * from './Button';
 export * from './ButtonMilk';
 export * from './Badge';
 export * from './TextInput';
+export * from './Label';

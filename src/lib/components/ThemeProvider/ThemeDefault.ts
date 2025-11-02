@@ -83,7 +83,7 @@ export const themeDefault: ITheme = {
   '--border-radius-panel': '12',
   '--border-radius-window': '20',
 
-  '--stroke-base': '1',
+  '--stroke-base': '1px',
   '--stroke-button': 'var(--stroke-base)',
 
   '--spacing-xs-1': '4',
