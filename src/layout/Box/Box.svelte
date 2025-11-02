@@ -4,8 +4,8 @@
 </script>
 
 <div class={`Box`}
-  class:underline={underline}
-  class:sm={size === 'sm'}
+  class:Box-underline={underline}
+  class:Box-sm={size === 'sm'}
 >
   {@render children()}
 </div>
@@ -15,10 +15,10 @@
     padding-bottom: 1rem;
     margin-bottom: 1rem;
     position: relative;
-    &.underline {
+    &.Box-underline {
       border-bottom: 1px solid var(--line-base);
     }
-    &.sm {
+    &.Box-sm {
       padding-bottom: .5rem;
       margin-bottom: .5rem;
     }
