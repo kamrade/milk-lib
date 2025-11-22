@@ -46,39 +46,41 @@
   --color: var(--text-base-main);
 }
 
-.Button.Button-lg[data-variant="milk"] {
---padding-y: 7px; 
---padding-x: 20px; 
---font-size: 16px; 
---line-height: 24px; 
---border-radius: 8px; 
---inner-gap: 6px;
+.Button.Button-sm[data-variant="milk"] {
+--padding-y: 5px;
+--padding-x: 10px; 
+--font-size: var(--font-size-sm);
+--line-height: var(--line-height-sm);
+--border-radius: var(--border-radius-button-sm);
+--inner-gap: 3px;
   &.Button-icon {
-    --padding-y: 11px;
-    --padding-x: 11px;
+    --padding-y: 6px;
+    --padding-x: 6px;
   }
 }
+
 .Button.Button-md[data-variant="milk"] {
 --padding-y: 5px; 
 --padding-x: 16px; 
---font-size: 14px; 
---line-height: 20px; 
---border-radius: 8px; 
+--font-size: var(--font-size-md);
+--line-height: var(--line-height-md);
+--border-radius: var(--border-radius-button);
 --inner-gap: 5px;
   &.Button-icon {
     --padding-y: 8px;
     --padding-x: 8px;
   }
 }
-.Button.Button-sm[data-variant="milk"] {
---padding-y: 5px;
---padding-x: 10px; 
---font-size: 12px; 
---line-height: 14px; 
---border-radius: 6px; 
---inner-gap: 3px;
+
+.Button.Button-lg[data-variant="milk"] {
+--padding-y: 7px; 
+--padding-x: 20px; 
+--font-size: var(--font-size-lg);
+--line-height: var(--line-height-lg);
+--border-radius: var(--border-radius-button);
+--inner-gap: 6px;
   &.Button-icon {
-    --padding-y: 6px;
-    --padding-x: 6px;
+    --padding-y: 11px;
+    --padding-x: 11px;
   }
 }

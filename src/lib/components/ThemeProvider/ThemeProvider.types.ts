@@ -103,4 +103,10 @@ export interface ITheme {
   '--zindex-tooltip': string;
   '--zindex-toast': string;
 
+  '--font-size-sm': string;
+  '--line-height-sm': string;
+  '--font-size-md': string;
+  '--line-height-md': string;
+  '--font-size-lg': string;
+  '--line-height-lg': string;
 };

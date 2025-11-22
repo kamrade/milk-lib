@@ -15,7 +15,6 @@ export const themeDefault: ITheme = {
   '--line-success': '#B6F7CB',
   '--line-danger': '#FBC4BF',
   '--line-secondary': '#BEB6F9',
-  // Add line-emp
 
   '--bg-base': '#fff',
 
@@ -78,10 +77,12 @@ export const themeDefault: ITheme = {
   '--icon-danger-main': '#C42A1A',
 
 
-  '--border-radius-button-sm': '5',
-  '--border-radius-button': '8',
-  '--border-radius-panel': '12',
-  '--border-radius-window': '20',
+  '--border-radius-button-sm': '5px',
+  '--border-radius-button': '8px',
+  '--border-radius-panel': '12px',
+  '--border-radius-window': '20px',
+
+  
 
   '--stroke-base': '1px',
   '--stroke-button': 'var(--stroke-base)',
@@ -103,8 +104,13 @@ export const themeDefault: ITheme = {
   '--zindex-modal': '1055',
   '--zindex-popover': '1070',
   '--zindex-tooltip': '1080',
-  '--zindex-toast': '1090'
+  '--zindex-toast': '1090',
 
-
+  '--font-size-sm': '12px',
+  '--line-height-sm': '14px',
+  '--font-size-md': '14px',
+  '--line-height-md': '20px',
+  '--font-size-lg': '16px',
+  '--line-height-lg': '24px',
 
 }

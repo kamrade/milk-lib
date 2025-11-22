@@ -10,7 +10,7 @@
 <style>
   .Title {
     font-size: 1rem;
-    font-weight: 600;
+    font-weight: 400;
     margin-bottom: .5em;
   }
 </style>

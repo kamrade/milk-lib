@@ -11,7 +11,7 @@
 <style>
   .PageTitle {
     font-size: 1.5rem;
-    font-weight: 600;
+    font-weight: 400;
     margin-bottom: .5em;
   }
 </style>
