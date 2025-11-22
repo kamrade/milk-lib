@@ -10,3 +10,4 @@ export * from './Label';
 export * from './TextInput';
 export * from './TextInputMilk';
 export * from './TextInputBlock';
+export * from './Command';

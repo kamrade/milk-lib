@@ -26,4 +26,10 @@ export const navigationData: INavigationItem[] = [
   { type: 'link', label: 'TextInput Block', link: '/showcase/text-input-block' },
   { type: 'link', label: 'TextInput Block Autofocus', link: '/showcase/text-input-block-autofocus' },
   { type: 'link', label: 'TextInput Bindable', link: '/showcase/text-input-bindable' },
+  { type: 'heading', label: 'Command' },
+  { type: 'link', label: 'Command', link: '/showcase/command' },
+  { type: 'link', label: 'Command Flat', link: '/showcase/command-flat' },
+  { type: 'link', label: 'Command in Loop', link: '/showcase/command-in-loop' },
+  { type: 'link', label: 'Command in Menu', link: '/showcase/command-in-menu' },
+  { type: 'link', label: 'Command Select', link: '/showcase/command-select' },
 ]

@@ -7,5 +7,5 @@ Sveltekit library, powered by [`sv`](https://npmjs.com/package/sv).
 
 ## Roadmap
 + TextInput Milk
-- TExtInput Box
++ TextInput Box
 - Command
