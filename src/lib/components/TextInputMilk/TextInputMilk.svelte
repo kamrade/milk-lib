@@ -35,5 +35,6 @@
   bind:value
   bind:this={textInputRef}
   {classNames}
+  dataVariant='milk'
   {...rest}
 />

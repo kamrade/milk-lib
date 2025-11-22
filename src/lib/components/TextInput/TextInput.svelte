@@ -23,6 +23,7 @@
     ariaHasPopup,
     ariaExpanded,
     ariaControls,
+    dataVariant,
     ...rest
   }: ITextInputProps = $props();
 
@@ -61,6 +62,7 @@
   aria-haspopup={ariaHasPopup}
   aria-expanded={ariaExpanded}
   aria-controls={ariaControls}
+  {...(dataVariant ? { 'data-variant': dataVariant } : {})}
   {...rest}
 />
 

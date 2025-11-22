@@ -29,6 +29,7 @@ export interface ITextInputProps {
   ariaHasPopup?: "dialog" | "menu" | "listbox" | "tree" | "grid" | null | undefined;
   ariaExpanded?: boolean;
   ariaControls?: string;
+  dataVariant?: string;
 }
 
 export type ITextInputMessageVariant = 'default' | 'error';
