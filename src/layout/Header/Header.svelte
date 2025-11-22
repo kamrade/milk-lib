@@ -11,6 +11,12 @@
 	</StickyHeader>
 
   <style>
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
     .header {
       background: var(--bg-base-emp-100);
       color: var(--text-base-inv);

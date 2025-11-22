@@ -6,5 +6,6 @@ Sveltekit library, powered by [`sv`](https://npmjs.com/package/sv).
 - Sync ButtonMilk and TextInputMilk css variables with global theme
 
 ## Roadmap
-- TextInput
-- Control
++ TextInput Milk
+- TExtInput Box
+- Command
