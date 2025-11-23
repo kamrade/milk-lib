@@ -56,18 +56,18 @@
 <style lang="scss">
 
   .checkbox-button {
-    --size: 14px;
+    --size: 16px;
     --border-width: 2px;
-    --border-radius: 4px;
+    --border-radius: 3px;
 
     --background-color: white;
     --border-color: var(--line-base);
 
-    --background-color-checked: var(--bg-secondary-emp-100);
-    --color-checked: white;
+    --background-color-checked: var(--bg-primary-emp-100);
+    --color-checked: var(--icon-base-main);
     --border-color-checked: var(--background-color-checked);
 
-    --color-outline-focused: var(--bg-secondary-emp-100);
+    --color-outline-focused: var(--bg-primary-emp-100);
 
     --opacity-disabled: 0.6;
 
@@ -98,12 +98,10 @@
   }
 
   .checkbox-icon {
-    font-size: 0.875em;
-    line-height: 1;
+    line-height: 0;
     pointer-events: none;
     opacity: 0;
-    position: relative;
-    top: 1px;
+    box-sizing: border-box;
 
     &.visible1 {
       opacity: 1;
