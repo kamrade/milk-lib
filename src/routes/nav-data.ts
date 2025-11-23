@@ -45,4 +45,7 @@ export const navigationData: INavigationItem[] = [
   { type: 'link', label: 'Modal Base', link: '/showcase/modal-base' },
   { type: 'link', label: 'Modal Complex', link: '/showcase/modal-complex' },
   
+  { type: 'heading', label: 'Checkbox' },
+  { type: 'link', label: 'Checkbox Primitive', link: '/showcase/checkbox-primitive' },
+  { type: 'link', label: 'Modal Primitive Form', link: '/showcase/checkbox-primitive-form' },
 ]
