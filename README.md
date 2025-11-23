@@ -10,12 +10,13 @@ Sveltekit library, powered by [`sv`](https://npmjs.com/package/sv).
 + TextInput Box
 + Command
 
++ Icons
++ Select
++ Modal Dialog
+
 - Alert Dialog
 - Accordion
 - Sheet
 - Menu
 - Card
 - Checkbox
-- Select
-- Dialogs
-- Icons

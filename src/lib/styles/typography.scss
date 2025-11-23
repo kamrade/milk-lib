@@ -1,6 +1,11 @@
 .onest-font-default {
-  font-family: "Onest", sans-serif;
+  font-family: "Geist", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
+}
+
+html, body {
+  font-family: var(--font-base);
+  color: var(--text-base-main);
 }

@@ -11,3 +11,7 @@ export * from './TextInput';
 export * from './TextInputMilk';
 export * from './TextInputBlock';
 export * from './Command';
+export * from './Portal';
+export * from './Modal';
+export * from './Select';
+export * from './Icon';

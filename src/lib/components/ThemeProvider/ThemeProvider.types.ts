@@ -1,6 +1,9 @@
 export type ThemeVars = Record<string, string | number>;
 
 export interface ITheme {
+
+  '--font-base': string;
+  
   '--panel-base': string;
   '--panel-primary': string;
   '--panel-success': string;
@@ -18,6 +21,7 @@ export interface ITheme {
   
 
   '--bg-base': string;
+  '--bg-backdrop': string;
 
   '--bg-base-100': string;
   '--bg-base-200': string;
@@ -109,4 +113,5 @@ export interface ITheme {
   '--line-height-md': string;
   '--font-size-lg': string;
   '--line-height-lg': string;
+  '--font-size-h2': string;
 };

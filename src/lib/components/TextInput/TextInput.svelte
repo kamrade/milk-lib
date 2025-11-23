@@ -144,6 +144,7 @@
     border-right-width: var(--border-right-width);
     border-left-width: var(--border-left-width);
     transition: var(--transition);
+    color: var(--text-color);
 
     &:focus {
       border-color: var(--border-color-focus);

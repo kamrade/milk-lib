@@ -1,5 +1,5 @@
 <script lang="ts">
-
+  import { browser } from '$app/environment';
 	import type { Snippet } from 'svelte';
   import type { ITheme } from './ThemeProvider.types'
 
@@ -11,9 +11,17 @@
       .join(';');
   });
 
+  $effect(() => {
+    if (!browser || !theme) return;
+
+    for (const [k, v] of Object.entries(theme)) {
+      // ключи должны быть вида `--color-bg`
+      document.documentElement.style.setProperty(k, String(v));
+    }
+  });
 </script>
 
-<div style={cssVars} class="ThemeProvider">
+<!-- <div style={cssVars} class="ThemeProvider"> -->
   {@render children()}
-</div>
+<!-- </div> -->
 

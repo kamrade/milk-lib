@@ -1,6 +1,9 @@
 import type { ITheme } from "./ThemeProvider.types";
 
 export const themeDefault: ITheme = {
+
+  '--font-base': `"Onest", sans-serif`,
+
   '--panel-base': '#f3f5f6',
   '--panel-primary': '#FFF9E5',
   '--panel-success': '#DDF9E6',
@@ -17,6 +20,7 @@ export const themeDefault: ITheme = {
   '--line-secondary': '#BEB6F9',
 
   '--bg-base': '#fff',
+  '--bg-backdrop': 'rgba(0,0,0,0.5)',
 
   '--bg-base-100': '#EDEEF0',
   '--bg-base-200': '#E2E4E8',
@@ -112,5 +116,7 @@ export const themeDefault: ITheme = {
   '--line-height-md': '20px',
   '--font-size-lg': '16px',
   '--line-height-lg': '24px',
+
+  '--font-size-h2': '20px',
 
 }

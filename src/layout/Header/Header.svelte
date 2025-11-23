@@ -20,7 +20,7 @@
     .header {
       background: var(--bg-base-emp-100);
       color: var(--text-base-inv);
-      padding: 0.5rem;
+      padding: 0.25rem;
     }
 
     .title-h1 {
@@ -28,5 +28,6 @@
       font-weight: 500;
       text-transform: uppercase;
       letter-spacing: 1px;
+      margin: 0;
     }
   </style>

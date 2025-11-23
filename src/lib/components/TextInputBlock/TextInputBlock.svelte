@@ -55,18 +55,20 @@
   />
 
 
-  {#if onClear && !disabled && value !== ''}
-    <!-- I deliberately excluded this button from tabindex -->
-    <button tabindex="-1" type="button" class="clear-value" style={`right: ${suffixWidth + 12}px;`} onmouseup={handleClear}>
-      <CloseCircleFillSystem size="1em" />
-    </button>
-  {/if}
+  <div class="suffix">
+    {#if onClear && !disabled && value !== ''}
+      <!-- I deliberately excluded this button from tabindex -->
+      <button tabindex="-1" type="button" class="clear-value" style={`right: ${suffixWidth + 12}px;`} onmouseup={handleClear}>
+        <CloseCircleFillSystem size="1em" />
+      </button>
+    {/if}
 
-  {#if suffix}
-    <div class="suffix" bind:this={suffixEl}>
-      {@render suffix()}
-    </div>
-  {/if}
+    {#if suffix}
+      <div class="suffix-el" bind:this={suffixEl}>
+        {@render suffix()}
+      </div>
+    {/if}
+  </div>
 </div>
 
 <style lang="scss">
@@ -84,6 +86,7 @@
       height: 100%;
       display: flex;
       align-items: center;
+      gap: .25rem;
     }
     .prefix {
       left: 0;
@@ -95,20 +98,26 @@
     }
 
     .clear-value {
-      position: absolute;
-      z-index: 1;
-      top: 4px;
-      bottom: 4px;
+      // position: absolute;
+      // z-index: 1;
+      // top: 4px;
+      // bottom: 4px;
       height: calc(100% - 8px);
       cursor: pointer;
       border: 1px solid transparent;
       border-radius: 8px;
       padding: 0 4px;
+      background: transparent;
+      display: inline-flex;
+      align-items: center;
+
+      &:hover {
+        background: var(--bg-base-100);
+      }
 
       &:focus {
         outline: none;
-        background-color: #EDEEF0;
-        border-color: #D3D5DC;
+        background: var(--bg-base-200);
       }
     }
   }

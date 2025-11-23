@@ -1,1 +1,6 @@
+@forward "./root.scss";
 @forward "./typography.scss";
+
+html, body {
+  color: var(--text-base-main);
+}

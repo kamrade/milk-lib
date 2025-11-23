@@ -16,6 +16,7 @@ export const navigationData: INavigationItem[] = [
   { type: 'heading', label: 'Button' },
   { type: 'link', label: 'Button Primitive', link: '/showcase/button-primitive' },
   { type: 'link', label: 'Button Milk', link: '/showcase/button-milk' },
+  
   { type: 'heading', label: 'TextInput' },
   { type: 'link', label: 'TextInput Primitive', link: '/showcase/text-input-primitive' },
   { type: 'link', label: 'TextInput Primitive Actions', link: '/showcase/text-input-primitive-actions' },
@@ -26,10 +27,22 @@ export const navigationData: INavigationItem[] = [
   { type: 'link', label: 'TextInput Block', link: '/showcase/text-input-block' },
   { type: 'link', label: 'TextInput Block Autofocus', link: '/showcase/text-input-block-autofocus' },
   { type: 'link', label: 'TextInput Bindable', link: '/showcase/text-input-bindable' },
+  
   { type: 'heading', label: 'Command' },
   { type: 'link', label: 'Command', link: '/showcase/command' },
   { type: 'link', label: 'Command Flat', link: '/showcase/command-flat' },
   { type: 'link', label: 'Command in Loop', link: '/showcase/command-in-loop' },
   { type: 'link', label: 'Command in Menu', link: '/showcase/command-in-menu' },
   { type: 'link', label: 'Command Select', link: '/showcase/command-select' },
+
+  { type: 'heading', label: 'Select' },
+  { type: 'link', label: 'Select Base', link: '/showcase/select' },
+  { type: 'link', label: 'Select Flat', link: '/showcase/select-flat' },
+  { type: 'link', label: 'Select Inner Loading', link: '/showcase/select-inner-loading' },
+  { type: 'link', label: 'Select Loading', link: '/showcase/select-loading' },
+
+  { type: 'heading', label: 'Dialogs' },
+  { type: 'link', label: 'Modal Base', link: '/showcase/modal-base' },
+  { type: 'link', label: 'Modal Complex', link: '/showcase/modal-complex' },
+  
 ]
