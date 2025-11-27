@@ -88,8 +88,12 @@
   });
 
 
-  const showMenu = () => (isMenuVisible = true);
-  const hideMenu = () => (isMenuVisible = false);
+  const showMenu = () => {
+    isMenuVisible = true;
+  }
+  const hideMenu = () => {
+    isMenuVisible = false;
+  }
 
   const focusHandler = () => {
     if (!isMenuVisible) {
@@ -107,7 +111,10 @@
       value: item.value
     });
     textInputBlock.focus();
-    hideMenu();
+    setTimeout(() => {
+      hideMenu();
+    }, 50);
+    
   }
 
   const handleCommandInputKeyDown = (e: KeyboardEvent) => {

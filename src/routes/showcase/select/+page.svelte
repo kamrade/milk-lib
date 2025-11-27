@@ -17,7 +17,13 @@
 
 <Box>
   <Title>Select base</Title>
-  <Select searchable={false} fullWidthMenu placeholder="Enter City" options={data.selectData} bind:value={value_first} />
+  <Select 
+    searchable={false}
+    fullWidthMenu 
+    placeholder="Enter City" 
+    options={data.selectData} 
+    bind:value={value_first}
+  />
 </Box>
 
 <Box>

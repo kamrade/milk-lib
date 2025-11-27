@@ -84,7 +84,7 @@
     --background-color: var(--bg-base);
     --outter-padding: 4px;
     --border-radius: var(--border-radius-panel);
-    --font-size: 1em;
+    --font-size: 1rem;
 
     // Item, Group
     --padding-y: 7px;

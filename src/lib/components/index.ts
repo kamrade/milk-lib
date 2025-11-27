@@ -16,3 +16,4 @@ export * from './Modal';
 export * from './Select';
 export * from './Icon';
 export * from './Checkbox';
+export * from './CheckboxGroup';

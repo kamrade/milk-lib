@@ -7,4 +7,5 @@ export interface ICheckboxProps {
   ariaLabel?: string;
   required?: boolean;
   indeterminate?: boolean;
+  toggleOption?: (value: string) => void;
 }

@@ -1,8 +1,22 @@
 <script lang="ts">
   import type { ICheckboxProps } from './Checkbox.types';
-  let { checked = $bindable(), disabled, id, name, value, required, ariaLabel }: ICheckboxProps = $props();
+  let { 
+    checked = $bindable(), 
+    disabled, 
+    id, 
+    name, 
+    value, 
+    required, 
+    ariaLabel,
+    toggleOption
+  }: ICheckboxProps = $props();
 
-  const toggle = () => checked = !checked;
+  const toggle = () => {
+    checked = !checked;
+    if (value) {
+      toggleOption?.(value);
+    }
+  };
 
   function handleKeydown(e: KeyboardEvent) {
     if (e.key === ' ' || e.key === 'Enter') {
@@ -29,20 +43,8 @@
 >
 
   <span class={`checkbox-icon ${checked ? 'visible1' : ''}`}>
-    <svg
-      width="16"
-      height="16"
-      viewBox="0 0 24 24"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        d="M20 6L9 17L4 12"
-        stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      />
+    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M23.9141 7.41406L9 22.3281L0.585938 13.9141L3.41406 11.0859L9 16.6719L21.0859 4.58594L23.9141 7.41406Z" fill="currentColor"/>
     </svg>
   </span>
 

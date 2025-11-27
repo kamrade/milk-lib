@@ -1,6 +1,7 @@
 <script lang="ts">
   import {Checkbox } from '$lib';
   import { Divider, PageTitle, Title, Box } from '$layout';
+  
   let agree = $state(false);
 </script>
 

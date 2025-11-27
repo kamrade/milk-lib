@@ -48,4 +48,5 @@ export const navigationData: INavigationItem[] = [
   { type: 'heading', label: 'Checkbox' },
   { type: 'link', label: 'Checkbox Primitive', link: '/showcase/checkbox-primitive' },
   { type: 'link', label: 'Modal Primitive Form', link: '/showcase/checkbox-primitive-form' },
+  { type: 'link', label: 'Checkbox Group', link: '/showcase/checkbox-group' },
 ]
