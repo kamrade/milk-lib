@@ -32,6 +32,7 @@
 
   onMount(() => {
     if (autoFocus && inputEl) {
+      
       // Wrapped to setTimeout to correctly autoFocus in modal and conditional rendering
       setTimeout(() => {
         inputEl.focus();

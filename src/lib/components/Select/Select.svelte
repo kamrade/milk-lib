@@ -28,7 +28,8 @@
     minWidthMenu,
     menuGap,
     menuMaxHeight,
-    searchable=true
+    searchable=true,
+    onClear
   }: ISelectProps = $props();
 
   const menuId = `select-menu-${crypto.randomUUID()}`;
@@ -155,6 +156,7 @@
   const handleClear = () => {
     hideMenu();
     value = null;
+    onClear?.();
   }
 
 </script>
@@ -168,7 +170,7 @@
     readonly
     onFocus={focusHandler}
     onKeyDown={handleControlKeyDown}
-    onClear={handleClear}
+    onClear={onClear ? handleClear : undefined}
     pseudoFocus={isMenuVisible}
     onClick={handleControlClick}
     variant="contained"

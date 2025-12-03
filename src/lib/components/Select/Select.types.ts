@@ -18,4 +18,5 @@ export interface ISelectProps {
   minWidthMenu?: number;
   menuGap?: number;
   menuMaxHeight?: number;
+  onClear?: () => void;
 }
