@@ -13,6 +13,7 @@ export * from './TextInputBlock';
 export * from './Command';
 export * from './Portal';
 export * from './Modal';
+export * from './SegmentedControl';
 export * from './Select';
 export * from './Icon';
 export * from './Checkbox';
