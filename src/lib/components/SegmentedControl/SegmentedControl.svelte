@@ -188,7 +188,7 @@
     padding: var(--segmented-control-padding);
     border: var(--segmented-control-border);
     border-radius: var(--segmented-control-radius);
-    background-color: var(--bg-base-100);
+    background-color: var(--bg-base);
     align-items: stretch;
     justify-content: flex-start;
     transition: border-color .2s ease-in-out, box-shadow .2s ease-in-out;
@@ -199,8 +199,8 @@
   }
 
   .SegmentedControlRoot:focus-within {
-    border-color: var(--line-control-100);
-    box-shadow: 0 0 0 1px var(--line-control-100);
+    border-color: var(--line-base);
+    box-shadow: 0 0 0 1px var(--line-base);
   }
 
 </style>

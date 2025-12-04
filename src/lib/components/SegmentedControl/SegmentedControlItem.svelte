@@ -25,22 +25,9 @@
   const disabledStore = context?.disabled ?? fallbackDisabled;
   const itemId = Symbol(value);
   let buttonEl: HTMLButtonElement | null = null;
-  let isDisabled = $state(false);
-  let isSelected = $state(false);
-  let tabIndex = $state(0);
-
-  $effect(() => {
-    isDisabled = disabled || $disabledStore;
-  });
-
-  $effect(() => {
-    isSelected = $selectedValueStore === value;
-  });
-
-  $effect(() => {
-    const hasSelection = $selectedValueStore !== null;
-    tabIndex = hasSelection ? (isSelected ? 0 : -1) : 0;
-  });
+  let isDisabled = $derived(disabled || $disabledStore);
+  let isSelected = $derived($selectedValueStore === value);
+  let tabIndex = $derived(($selectedValueStore !== null) ? (isSelected ? 0 : -1) : 0);
 
   $effect(() => {
     if (context) {
@@ -96,7 +83,7 @@
     flex: 1;
     min-width: 0;
     border: 0;
-    border-radius: var(--border-radius-button, 8px);
+    border-radius: 6px;
     background: transparent;
     color: var(--text-base-muted);
     font-size: 0.875rem;
@@ -111,20 +98,20 @@
     gap: 0.35rem;
     outline: none;
 
-    &:not(:disabled):hover {
-      background: var(--bg-base);
+    &:not(:disabled):hover:not([data-state='on']) {
+      background: var(--bg-base-200);
     }
   }
 
   .SegmentedControlItem[data-state='on'] {
-    background: var(--bg-base);
-    color: var(--text-base-main);
-    box-shadow: inset 0 0 0 1px var(--line-base);
+    background: var(--bg-base-emp-100);
+    color: var(--text-base-inv);
+    // box-shadow: inset 0 0 0 1px var(--line-base);
   }
 
   .SegmentedControlItem:focus-visible {
-    outline: 2px solid var(--line-control-100);
-    outline-offset: 1px;
+    // outline: 2px solid var(--line-base);
+    // outline-offset: 1px;
   }
 
   .SegmentedControlItem--disabled {
