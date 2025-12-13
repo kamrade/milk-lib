@@ -52,4 +52,7 @@ export const navigationData: INavigationItem[] = [
 
   { type: 'heading', label: 'Segmented Control' },
   { type: 'link', label: 'Segmented Control Base', link: '/showcase/segmented-control' },
+
+  { type: 'heading', label: 'Sheet' },
+  { type: 'link', label: 'Sheet Base', link: '/showcase/sheet-base' },
 ]
