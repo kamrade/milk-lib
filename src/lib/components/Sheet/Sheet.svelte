@@ -55,7 +55,6 @@
     e.stopPropagation();
     if (!isOpen) {
       if (e.propertyName === 'transform') {
-        console.log('hide');
         shouldRender = false;
       }
     }
