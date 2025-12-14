@@ -35,6 +35,12 @@
   <ButtonMilk variant="base-emphasis" size="lg">Base emphasis milk button</ButtonMilk>
 </div>
 
+<div class='showcase-block'>
+  <ButtonMilk variant="danger-contained" size="lg"><CheckboxCircleFillSystem size="1em"/>Danger contained milk button</ButtonMilk>
+  <ButtonMilk variant="danger-outlined" size="lg">Danger outlined milk button</ButtonMilk>
+  <ButtonMilk variant="danger-emphasis" size="lg">Danger emphasis milk button</ButtonMilk>
+</div>
+
 
 <style>
   .showcase-block {

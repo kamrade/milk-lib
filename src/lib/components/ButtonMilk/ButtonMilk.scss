@@ -22,6 +22,30 @@
 --focus-color: var(--line-base-emp);
 }
 
+.Button.Button-danger-contained[data-variant="milk"] {
+--background-color: var(--bg-danger-100);
+--hover-background: var(--bg-danger-200);
+--active-background: var(--bg-danger-300);
+--color: var(--text-danger-main);
+--focus-color: var(--line-danger);
+}
+
+.Button.Button-danger-outlined[data-variant="milk"] {
+--background-color: transparent;
+--hover-background: var(--bg-danger-100);
+--active-background: var(--bg-danger-200);
+--color: var(--text-danger-main);
+--border-color: var(--line-danger);
+--focus-color: var(--line-danger);
+}
+
+.Button.Button-danger-emphasis[data-variant="milk"] {
+--background-color: var(--bg-danger-emp-100);
+--hover-background: var(--bg-danger-emp-200);
+--active-background: var(--bg-danger-emp-300);
+--color: white;
+}
+
 .Button.Button-primary-contained[data-variant="milk"] {
   --background-color: var(--bg-primary-100);
   --hover-background: var(--bg-primary-200);

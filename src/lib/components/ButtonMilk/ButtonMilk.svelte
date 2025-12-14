@@ -26,7 +26,10 @@
     : variant === "primary-contained" ? "Button-primary-contained"
     : variant === "base-contained" ? "Button-base-contained"
     : variant === "base-outlined" ? "Button-base-outlined"
-    : variant === "base-emphasis" ? "Button-base-emphasis" : ""
+    : variant === "base-emphasis" ? "Button-base-emphasis"
+    : variant === "danger-contained" ? "Button-danger-contained"
+    : variant === "danger-outlined" ? "Button-danger-outlined"
+    : variant === "danger-emphasis" ? "Button-danger-emphasis" : ""
 
   let classNames = `${sizeClassName} ${variantClassname}`;
 
