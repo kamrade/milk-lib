@@ -5,6 +5,25 @@
 
 
   let buttonRef: ButtonInstance;
+  const buttonVariants = [
+    "primary-emphasis",
+    "primary-outlined",
+    "primary-contained",
+    "base-contained",
+    "base-outlined",
+    "base-emphasis",
+    "danger-contained",
+    "danger-outlined",
+    "danger-emphasis"
+  ] as const;
+
+  let dynamicVariant: (typeof buttonVariants)[number] = buttonVariants[0];
+
+  const cycleVariant = () => {
+    const nextIndex =
+      (buttonVariants.indexOf(dynamicVariant) + 1) % buttonVariants.length;
+    dynamicVariant = buttonVariants[nextIndex];
+  };
 </script>
 
 <PageTitle>Button Milk Component</PageTitle>
@@ -13,6 +32,28 @@
 <div class='showcase-block'>
   <ButtonMilk onClick={() => buttonRef.focus()} variant="base-contained" size="sm"><CheckboxCircleFillSystem size="1em"/>Focus button</ButtonMilk>
   <ButtonMilk bind:this={buttonRef} variant="base-outlined" size="sm"><CheckboxCircleFillSystem size="1em"/>To be focused</ButtonMilk>
+</div>
+
+<Divider/>
+
+<div class='showcase-block dynamic-variant'>
+  <div class='dynamic-variant__controls'>
+    <label>
+      Variant
+      <select bind:value={dynamicVariant}>
+        {#each buttonVariants as option}
+          <option value={option}>{option}</option>
+        {/each}
+      </select>
+    </label>
+    <ButtonMilk variant="base-outlined" size="sm" onClick={cycleVariant}>
+      Next variant
+    </ButtonMilk>
+  </div>
+
+  <ButtonMilk variant={dynamicVariant} size="md">
+    Live variant: {dynamicVariant}
+  </ButtonMilk>
 </div>
 
 <Divider/>
@@ -49,5 +90,30 @@
     flex-wrap: wrap;
     gap: .5rem; 
     margin-bottom: 1rem;
+  }
+
+  .dynamic-variant {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .dynamic-variant__controls {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: .5rem;
+  }
+
+  label {
+    display: flex;
+    flex-direction: column;
+    font-size: .875rem;
+    gap: .25rem;
+  }
+
+  select {
+    padding: .25rem .5rem;
+    border-radius: .25rem;
   }
 </style>

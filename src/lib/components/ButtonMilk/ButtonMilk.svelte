@@ -3,7 +3,7 @@
   import type { IButtonMilkProps } from './ButtonMilk.types';
   import "./ButtonMilk.scss";
 
-  const { 
+  let { 
     size = 'sm',
     variant = 'primary-emphasis',
     children,
@@ -14,13 +14,14 @@
   let buttonRef: ButtonInstance;
   export const focus = () => buttonRef.focus();
 
-  let sizeClassName = 
+  const sizeClassName = $derived(
     size === "sm" ? "Button-sm" 
     : size === "md" ? "Button-md" 
     : size === "lg" ? "Button-lg" 
-    : "";
+    : ""
+  );
 
-  let variantClassname = 
+  const variantClassname = $derived(
     variant === "primary-emphasis" ? "Button-primary-emphasis" 
     : variant === "primary-outlined" ? "Button-primary-outlined"
     : variant === "primary-contained" ? "Button-primary-contained"
@@ -30,8 +31,9 @@
     : variant === "danger-contained" ? "Button-danger-contained"
     : variant === "danger-outlined" ? "Button-danger-outlined"
     : variant === "danger-emphasis" ? "Button-danger-emphasis" : ""
+  );
 
-  let classNames = `${sizeClassName} ${variantClassname}`;
+  const classNames = $derived(`${sizeClassName} ${variantClassname}`);
 
 </script>
 

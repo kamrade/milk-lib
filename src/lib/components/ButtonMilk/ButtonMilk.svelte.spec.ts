@@ -43,4 +43,19 @@ describe('ButtonMilk', () => {
     await button.click();
     expect(onClick).toHaveBeenCalledTimes(1);
   });
+
+  it('updates classes when variant prop changes dynamically', async () => {
+    const screen = render(ButtonMilk, {
+      variant: 'primary-emphasis',
+      children: textSnippet('Dynamic button')
+    });
+
+    const button = screen.getByRole('button', { name: 'Dynamic button' });
+    await expect.element(button).toHaveClass('Button-primary-emphasis');
+
+    await screen.rerender({ variant: 'danger-contained' });
+
+    await expect.element(button).toHaveClass('Button-danger-contained');
+    await expect.element(button).not.toHaveClass('Button-primary-emphasis');
+  });
 });
