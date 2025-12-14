@@ -12,6 +12,9 @@
 
   .SheetContent {
     padding: .5rem 1.5rem;
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow-y: auto;
   }
 
 </style>

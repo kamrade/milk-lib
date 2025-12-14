@@ -81,11 +81,15 @@
     z-index: var(--zindex-sheet);
     top: 0;
     height: 100vh;
+    max-height: 100vh;
     background: white;
     width: 400px;
     box-shadow: 0 0 20px rgba(0,0,0,0.1);
     opacity: 0;
     transition: all .3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
 
     @media (max-width: 400px) {
       width: 100%;
