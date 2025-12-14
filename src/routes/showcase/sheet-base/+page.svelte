@@ -18,8 +18,12 @@
 
   let isSheetShowed = $state<boolean>(false);
   let isModalShowed = $state<boolean>(false);
+  let sheetSide = $state<'left' | 'right'>('right');
 
-  const showSheet = () => isSheetShowed = true;
+  const showSheet = (side: 'left' | 'right' = 'right') => {
+    sheetSide = side;
+    isSheetShowed = true;
+  };
   const hideSheet = () => isSheetShowed = false;
 
   const showModal = () => isModalShowed = true;
@@ -30,10 +34,15 @@
 <PageTitle>Sheet</PageTitle>
 <Divider/>
 
-<ButtonMilk size="md" variant="base-emphasis" onClick={showSheet}> Open Sheet </ButtonMilk>
+<ButtonMilk size="md" variant="base-emphasis" onClick={() => showSheet('right')} style="margin-right: 12px;">
+  Open Sheet (right)
+</ButtonMilk>
+<ButtonMilk size="md" variant="base-emphasis" onClick={() => showSheet('left')}>
+  Open Sheet (left)
+</ButtonMilk>
 
 {#if browser}
-  <Sheet isOpen={isSheetShowed} hide={hideSheet}>
+  <Sheet isOpen={isSheetShowed} hide={hideSheet} side={sheetSide} hideOnClickOutside>
 
 
     <SheetActions hide={hideSheet}>

@@ -5,9 +5,10 @@
   import {onDestroy, onMount} from "svelte";
   import {browser} from "$app/environment";
 
-  let { children, isOpen, hide, hideOnClickOutside }: ISheetProps = $props();
+  let { children, isOpen, hide, hideOnClickOutside, side = 'right' }: ISheetProps = $props();
 
   let sheetElement = $state<HTMLDivElement | null>(null)
+  let shouldRender = $state(isOpen);
 
   const handleClickOutside = (event: MouseEvent) => {
     clickOutsideObject(event, sheetElement as HTMLElement, null, () => hide?.());
@@ -24,12 +25,25 @@
       document.removeEventListener("mousedown", handleClickOutside);
     }
   });
+
+  $effect(() => {
+    if (isOpen) {
+      shouldRender = true;
+    } else {
+      // дождаться окончания анимации (0.3s) и размонтировать
+      const timeout = setTimeout(() => shouldRender = false, 300);
+      return () => clearTimeout(timeout);
+    }
+  });
+
 </script>
 
 <Portal>
-  <div class={`Sheet ${isOpen ? 'Sheet-open' : ''}`} bind:this={sheetElement}>
-    {@render children()}
-  </div>
+  {#if shouldRender}
+    <div class={`Sheet Sheet-${side} ${isOpen ? 'Sheet-open' : ''}`} bind:this={sheetElement}>
+      {@render children()}
+    </div>
+  {/if}
 </Portal>
 
 <style lang="scss">
@@ -37,17 +51,28 @@
     position: fixed;
     z-index: var(--zindex-sheet);
     top: 0;
-    right: 0;
     height: 100vh;
     background: white;
     width: 400px;
-    border-left: 1px solid var(--line-base);
     box-shadow: 0 0 20px rgba(0,0,0,0.1);
-    transform: translateX(110%);
     opacity: 0;
     transition: all .3s ease-in-out;
     @media (max-width: 400px) {
       width: 100%;
+    }
+
+    &.Sheet-right {
+      right: 0;
+      left: auto;
+      border-left: 1px solid var(--line-base);
+      transform: translateX(110%);
+    }
+
+    &.Sheet-left {
+      left: 0;
+      right: auto;
+      border-right: 1px solid var(--line-base);
+      transform: translateX(-110%);
     }
 
     &.Sheet-open {
