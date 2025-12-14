@@ -1,14 +1,21 @@
+<!-- 
+  TODO: Сейчас при смене пропса side на лету анимация слегка корявая
+  Нужно будет подумать как ее сделать поприятнее.
+-->
+
 <script lang="ts">
-  import {clickOutsideObject} from '$lib';
+  import { clickOutsideObject } from '$lib';
   import Portal from '$lib/components/Portal/Portal.svelte';
   import type { ISheetProps } from './Sheet.types';
-  import {onDestroy, onMount} from "svelte";
-  import {browser} from "$app/environment";
+  import { onDestroy, onMount } from "svelte";
+  import { browser } from "$app/environment";
 
   let { children, isOpen, hide, hideOnClickOutside, side = 'right' }: ISheetProps = $props();
 
   let sheetElement = $state<HTMLDivElement | null>(null)
   let shouldRender = $state(isOpen);
+
+  const sheetClassNames = $derived(`Sheet Sheet-${side}`);
 
   const handleClickOutside = (event: MouseEvent) => {
     clickOutsideObject(event, sheetElement as HTMLElement, null, () => hide?.());
@@ -29,18 +36,40 @@
   $effect(() => {
     if (isOpen) {
       shouldRender = true;
-    } else {
-      // дождаться окончания анимации (0.3s) и размонтировать
-      const timeout = setTimeout(() => shouldRender = false, 300);
+      
+      const timeout = setTimeout(() => {
+        if (sheetElement) {
+          sheetElement.classList.add('Sheet-open');
+        }
+      });
       return () => clearTimeout(timeout);
+      
+    } else {
+      if (sheetElement) {
+        sheetElement.classList.remove('Sheet-open');
+      }
     }
   });
+
+  const handleTransitionEnd = (e: TransitionEvent) => {
+    e.stopPropagation();
+    if (!isOpen) {
+      if (e.propertyName === 'transform') {
+        console.log('hide');
+        shouldRender = false;
+      }
+    }
+  }
 
 </script>
 
 <Portal>
   {#if shouldRender}
-    <div class={`Sheet Sheet-${side} ${isOpen ? 'Sheet-open' : ''}`} bind:this={sheetElement}>
+    <div 
+      class={sheetClassNames} 
+      bind:this={sheetElement} 
+      ontransitionend={handleTransitionEnd}
+    >
       {@render children()}
     </div>
   {/if}
@@ -57,6 +86,7 @@
     box-shadow: 0 0 20px rgba(0,0,0,0.1);
     opacity: 0;
     transition: all .3s ease-in-out;
+
     @media (max-width: 400px) {
       width: 100%;
     }

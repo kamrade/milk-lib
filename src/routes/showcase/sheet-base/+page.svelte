@@ -34,11 +34,11 @@
 <PageTitle>Sheet</PageTitle>
 <Divider/>
 
-<ButtonMilk size="md" variant="base-emphasis" onClick={() => showSheet('right')} style="margin-right: 12px;">
-  Open Sheet (right)
-</ButtonMilk>
 <ButtonMilk size="md" variant="base-emphasis" onClick={() => showSheet('left')}>
   Open Sheet (left)
+</ButtonMilk>
+<ButtonMilk size="md" variant="base-emphasis" onClick={() => showSheet('right')} style="margin-right: 12px;">
+  Open Sheet (right)
 </ButtonMilk>
 
 {#if browser}
