@@ -46,6 +46,9 @@
     transform: translateX(110%);
     opacity: 0;
     transition: all .3s ease-in-out;
+    @media (max-width: 400px) {
+      width: 100%;
+    }
 
     &.Sheet-open {
       transform: translateX(0);
