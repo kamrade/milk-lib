@@ -109,11 +109,6 @@
     // box-shadow: inset 0 0 0 1px var(--line-base);
   }
 
-  .SegmentedControlItem:focus-visible {
-    // outline: 2px solid var(--line-base);
-    // outline-offset: 1px;
-  }
-
   .SegmentedControlItem--disabled {
     opacity: 0.5;
     cursor: not-allowed;

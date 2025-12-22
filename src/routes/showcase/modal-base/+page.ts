@@ -1,5 +1,5 @@
 import type { PageLoad } from './$types';
-import type { ISelectGroupData } from "@lib";
+import type { ISelectGroupData } from "$lib";
 
 export const load: PageLoad = async () => {
 

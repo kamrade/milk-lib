@@ -165,7 +165,7 @@
 
 <div
   class={`SegmentedControlRoot ${classNames}`}
-  role="group"
+  role="radiogroup"
   aria-orientation={orientation}
   aria-disabled={disabled}
   data-orientation={orientation}

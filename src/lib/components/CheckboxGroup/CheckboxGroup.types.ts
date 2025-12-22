@@ -1,6 +1,12 @@
-import type { ICheckboxProps } from '$lib';
+export type CheckboxGroupHeader = {
+  kind: 'header';
+  label: string;
+  hint?: string;
+  id?: string;
+};
 
 export type CheckboxOption = {
+  kind?: 'option';
   label: string;
   value: string;
   hint?: string;
@@ -9,9 +15,11 @@ export type CheckboxOption = {
   name?: string;
 };
 
+export type CheckboxGroupItem = CheckboxOption | CheckboxGroupHeader;
+
 export type CheckboxGroupProps = {
   legend: string;
-  options: CheckboxOption[];
+  options: CheckboxGroupItem[];
   selectedValues: string[],
   name: string;
 }

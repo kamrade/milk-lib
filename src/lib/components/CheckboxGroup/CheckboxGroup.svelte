@@ -1,11 +1,11 @@
 <script lang="ts">
   
-  import type { CheckboxOption, CheckboxGroupProps } from './CheckboxGroup.types';
+  import type { CheckboxGroupItem, CheckboxGroupProps } from './CheckboxGroup.types';
   import { Checkbox } from '$lib';
 
   let {
     legend = 'Choose options',
-    options = [] as CheckboxOption[],
+    options = [] as CheckboxGroupItem[],
     selectedValues = $bindable([] as string[]),
     name
   }: CheckboxGroupProps = $props();
@@ -30,24 +30,33 @@
 
   <ul class="checkbox-list">
     {#if options.length === 0}
-      <li class="checkbox-placeholder">Нет вариантов для выбора</li>
+      <li class="checkbox-placeholder">No option for choice</li>
     {:else}
-      {#each options as option (option.value)}
+      {#each options as option, index (option.kind === 'header' ? `header-${index}` : option.value)}
         <li>
-          <label class="checkbox-option" data-disabled={option.disabled || undefined}>
-            <Checkbox
-              id={option.id} name={option.name}
-              checked={isSelected(option.value)}
-              value={option.value}
-              toggleOption={handleOptionToggle}
-            />
-            <span>
+          {#if option.kind === 'header'}
+            <div class="checkbox-section-title" id={option.id}>
               <span>{option.label}</span>
               {#if option.hint}
                 <small>{option.hint}</small>
               {/if}
-            </span>
-          </label>
+            </div>
+          {:else}
+            <label class="checkbox-option" data-disabled={option.disabled || undefined}>
+              <Checkbox
+                id={option.id} name={option.name}
+                checked={isSelected(option.value)}
+                value={option.value}
+                toggleOption={handleOptionToggle}
+              />
+              <span>
+                <span>{option.label}</span>
+                {#if option.hint}
+                  <small>{option.hint}</small>
+                {/if}
+              </span>
+            </label>
+          {/if}
         </li>
       {/each}
     {/if}
@@ -92,6 +101,24 @@
   .checkbox-placeholder {
     color: var(--text-base-placeholder, #7c7c7c);
     font-size: 14px;
+  }
+
+  .checkbox-section-title {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-base-placeholder, #7c7c7c);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: .75em;
+
+  }
+
+  .checkbox-section-title small {
+    display: block;
+    font-size: 12px;
+    font-weight: 400;
+    text-transform: none;
+    letter-spacing: 0;
   }
 
   .checkbox-option {
