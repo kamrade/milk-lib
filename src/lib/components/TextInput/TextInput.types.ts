@@ -1,7 +1,7 @@
 import type { Snippet } from "svelte";
 import type { ChangeEventHandler, FocusEventHandler, KeyboardEventHandler, MouseEventHandler } from "svelte/elements";
 
-export type TextInputType = "text" | "password";
+export type TextInputType = "text" | "password" | "number" | "email" | "url" | "search";
 
 export type TextInputInstance = {
   focus: () => void;
