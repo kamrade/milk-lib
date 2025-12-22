@@ -43,12 +43,13 @@
             </div>
           {:else}
             <label class="checkbox-option" data-disabled={option.disabled || undefined}>
-              <Checkbox
-                id={option.id} name={option.name}
-                checked={isSelected(option.value)}
-                value={option.value}
-                toggleOption={handleOptionToggle}
-              />
+            <Checkbox
+              id={option.id} name={option.name}
+              disabled={option.disabled}
+              checked={isSelected(option.value)}
+              value={option.value}
+              toggleOption={handleOptionToggle}
+            />
               <span>
                 <span>{option.label}</span>
                 {#if option.hint}
