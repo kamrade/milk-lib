@@ -12,6 +12,7 @@ export default defineConfig({
 					name: 'client',
 					environment: 'browser',
 					browser: {
+						screenshotFailures: false,
 						enabled: true,
 						provider: 'playwright',
 						headless: true,

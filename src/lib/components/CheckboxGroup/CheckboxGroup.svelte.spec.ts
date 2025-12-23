@@ -38,4 +38,18 @@ describe('CheckboxGroup', () => {
     const disabledCheckbox = screen.getByRole('checkbox', { name: 'Option B' });
     await expect.element(disabledCheckbox).toBeDisabled();
   });
+
+  it('applies max height and enables scrolling', () => {
+    const screen = render(CheckboxGroup, {
+      legend: 'Pick options',
+      options: baseOptions,
+      selectedValues: [],
+      name: 'preferences',
+      maxHeight: 120
+    });
+
+    const list = screen.container.querySelector('.checkbox-list') as HTMLElement;
+    expect(list.classList.contains('scrollable')).toBe(true);
+    expect(list.style.getPropertyValue('max-height')).toBe('120px');
+  });
 });

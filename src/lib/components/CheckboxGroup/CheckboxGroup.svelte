@@ -7,8 +7,16 @@
     legend = 'Choose options',
     options = [] as CheckboxGroupItem[],
     selectedValues = $bindable([] as string[]),
-    name
+    name,
+    maxHeight
   }: CheckboxGroupProps = $props();
+
+  const maxHeightValue = $derived.by(() => {
+    if (maxHeight === undefined || maxHeight === null || maxHeight === '') {
+      return undefined;
+    }
+    return typeof maxHeight === 'number' ? `${maxHeight}px` : maxHeight;
+  });
 
   function handleOptionToggle(value: string) {
     toggleOption(value);
@@ -28,7 +36,12 @@
     <legend>{legend}</legend>
   {/if}
 
-  <ul class="checkbox-list">
+  <ul
+    class="checkbox-list"
+    class:scrollable={Boolean(maxHeightValue)}
+    style={`max-height: ${maxHeightValue || 'auto'};`}
+
+  >
     {#if options.length === 0}
       <li class="checkbox-placeholder">No option for choice</li>
     {:else}
@@ -97,6 +110,11 @@
     display: flex;
     flex-direction: column;
     gap: 8px;
+  }
+
+  .checkbox-list.scrollable {
+    overflow-y: auto;
+    min-height: 0;
   }
 
   .checkbox-placeholder {
