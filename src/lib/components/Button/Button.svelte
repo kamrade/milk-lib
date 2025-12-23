@@ -108,6 +108,7 @@
 
     transition: all .2s ease-in-out;
     box-sizing: border-box;
+    cursor: pointer;
 
     &:not(:disabled):hover {
       background: var(--hover-background);
