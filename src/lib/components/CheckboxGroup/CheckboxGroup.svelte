@@ -63,14 +63,14 @@
     {/if}
   </ul>
 
-  <div class="checkbox-selected">
+  <!-- <div class="checkbox-selected">
     <strong>Selected:</strong>
     {#if selectedValues.length === 0}
       <span>nothing</span>
     {:else}
       <span>{selectedValues.join(', ')}</span>
     {/if}
-  </div>
+  </div> -->
 </fieldset>
 
 <style lang="scss">
@@ -141,15 +141,4 @@
     font-size: 12px;
   }
 
-  .checkbox-selected {
-    font-size: 13px;
-    color: var(--text-base-placeholder, #7c7c7c);
-    display: flex;
-    gap: 6px;
-    flex-wrap: wrap;
-  }
-
-  .checkbox-selected strong {
-    color: var(--text-base-main, #222);
-  }
 </style>
