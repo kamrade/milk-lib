@@ -87,6 +87,7 @@
   .showcase-block {
     display: flex; 
     justify-content: flex-start;
+    align-items: flex-start;
     flex-wrap: wrap;
     gap: .5rem; 
     margin-bottom: 1rem;
