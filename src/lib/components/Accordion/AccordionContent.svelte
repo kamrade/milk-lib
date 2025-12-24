@@ -1,15 +1,24 @@
 <script lang="ts">
-  import { getContext } from "svelte";
+  import { getContext, onMount } from "svelte";
   import type {IAccordionContentProps, IAccordionItemContext} from "./Accordion.types";
 
   let { children }: IAccordionContentProps = $props();
   const { isOpen } = getContext<IAccordionItemContext>('accordion-item-context');
   let accordionContent: HTMLDivElement | null = $state(null);
-  let height = $derived<number>(
-    accordionContent
-      ? (accordionContent as HTMLDivElement).getBoundingClientRect?.().height
-      : 0
-  );
+  let height = $state(0);
+
+  const recalcHeight = () => {
+    height = accordionContent?.getBoundingClientRect?.().height ?? 0;
+  };
+
+  $effect(() => {
+    recalcHeight();
+  });
+
+  onMount(() => {
+    window.addEventListener('resize', recalcHeight);
+    return () => window.removeEventListener('resize', recalcHeight);
+  });
 
 </script>
 
