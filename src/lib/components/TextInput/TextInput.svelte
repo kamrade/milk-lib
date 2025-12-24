@@ -20,6 +20,8 @@
     style,
     classNames='',
     autoFocus,
+    prohibitFraction = false,
+    prohibitNegative = false,
     ariaHasPopup,
     ariaExpanded,
     ariaControls,
@@ -41,6 +43,62 @@
     }
   })
 
+  const shouldRestrictNumberInput = () =>
+    type === 'number' && (prohibitFraction || prohibitNegative);
+
+  const sanitizeNumberInput = (rawValue: string) => {
+    if (!shouldRestrictNumberInput()) {
+      return rawValue;
+    }
+
+    let nextValue = rawValue;
+
+    if (prohibitFraction) {
+      nextValue = nextValue.split(/[.,]/)[0];
+    }
+
+    if (prohibitNegative) {
+      nextValue = nextValue.replace(/-/g, '');
+    } else {
+      nextValue = nextValue.replace(/(?!^)-/g, '');
+    }
+
+    nextValue = nextValue.replace(/(?!^-)[^\d]/g, '');
+
+    return nextValue;
+  };
+
+  const handleKeyDown = (event: KeyboardEvent) => {
+    if (shouldRestrictNumberInput() && !(event.ctrlKey || event.metaKey || event.altKey)) {
+      if (prohibitFraction && (event.key === '.' || event.key === ',')) {
+        event.preventDefault();
+      }
+
+      if (prohibitNegative && event.key === '-') {
+        event.preventDefault();
+      }
+    }
+
+    onKeyDown?.(event as KeyboardEvent & { currentTarget: EventTarget & HTMLInputElement });
+  };
+
+  const handleInput = (event: Event) => {
+    if (!shouldRestrictNumberInput()) {
+      return;
+    }
+
+    const target = event.target as HTMLInputElement | null;
+    if (!target) {
+      return;
+    }
+
+    const sanitizedValue = sanitizeNumberInput(target.value);
+    if (sanitizedValue !== target.value) {
+      target.value = sanitizedValue;
+      value = sanitizedValue;
+    }
+  };
+
 </script>
 
 <input 
@@ -49,8 +107,9 @@
   class={`TextInput ${invalid ? 'invalid' : ''} ${classNames}`}
   onfocus={onFocus}
   onblur={onBlur} 
-  onkeydown={onKeyDown} 
+  onkeydown={handleKeyDown} 
   onkeyup={onKeyUp}
+  oninput={handleInput}
   onchange={onChange}
   onclick={onClick}
   {type} 

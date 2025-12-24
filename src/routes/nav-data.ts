@@ -27,6 +27,7 @@ export const navigationData: INavigationItem[] = [
   { type: 'link', label: 'TextInput Block', link: '/showcase/text-input-block' },
   { type: 'link', label: 'TextInput Block Autofocus', link: '/showcase/text-input-block-autofocus' },
   { type: 'link', label: 'TextInput Bindable', link: '/showcase/text-input-bindable' },
+  { type: 'link', label: 'TextInput Number', link: '/showcase/text-input-number' },
   
   { type: 'heading', label: 'Command' },
   { type: 'link', label: 'Command', link: '/showcase/command' },

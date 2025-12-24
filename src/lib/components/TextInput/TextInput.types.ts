@@ -25,6 +25,8 @@ export interface ITextInputProps {
   style?: string;
   classNames?: string;
   autoFocus?: boolean;
+  prohibitFraction?: boolean;
+  prohibitNegative?: boolean;
 
   ariaHasPopup?: "dialog" | "menu" | "listbox" | "tree" | "grid" | null | undefined;
   ariaExpanded?: boolean;
