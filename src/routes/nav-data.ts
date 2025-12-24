@@ -55,4 +55,8 @@ export const navigationData: INavigationItem[] = [
 
   { type: 'heading', label: 'Sheet' },
   { type: 'link', label: 'Sheet Base', link: '/showcase/sheet-base' },
+
+  { type: 'heading', label: 'Accordion' },
+  { type: 'link', label: 'Accordion Base', link: '/showcase/accordion' },
+  { type: 'link', label: 'Accordion Fancy', link: '/showcase/accordion-fancy' },
 ]

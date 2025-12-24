@@ -19,3 +19,4 @@ export * from './Icon';
 export * from './Checkbox';
 export * from './CheckboxGroup';
 export * from './Sheet';
+export * from './Accordion';
