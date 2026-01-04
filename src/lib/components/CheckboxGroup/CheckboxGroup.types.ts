@@ -23,4 +23,5 @@ export type CheckboxGroupProps = {
   selectedValues: string[],
   name: string;
   maxHeight?: number | string;
+  emptyText?: string;
 }

@@ -8,7 +8,8 @@
     options = [] as CheckboxGroupItem[],
     selectedValues = $bindable([] as string[]),
     name,
-    maxHeight
+    maxHeight,
+    emptyText = 'No option for choice'
   }: CheckboxGroupProps = $props();
 
   const maxHeightValue = $derived.by(() => {
@@ -43,7 +44,7 @@
 
   >
     {#if options.length === 0}
-      <li class="checkbox-placeholder">No option for choice</li>
+      <li class="checkbox-placeholder">{emptyText}</li>
     {:else}
       {#each options as option, index (option.kind === 'header' ? `header-${index}` : option.value)}
         <li>

@@ -144,6 +144,7 @@
       color: var(--disabled-color);
       background-color: var(--disabled-background-color);
       border-color: var(--disabled-border-color);
+      cursor: not-allowed;
     }
 
     &.block {
