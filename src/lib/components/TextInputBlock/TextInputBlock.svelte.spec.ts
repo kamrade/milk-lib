@@ -37,4 +37,20 @@ describe('TextInputBlock', () => {
     expect(input.value).toBe('');
     expect(handleClear).toHaveBeenCalledTimes(1);
   });
+
+  it('forwards onInput to TextInputMilk', () => {
+    const handleInput = vi.fn();
+    const screen = render(TextInputBlock, {
+      type: 'number',
+      prohibitFraction: true,
+      onInput: handleInput,
+      placeholder: 'With input'
+    });
+
+    const input = screen.getByRole('spinbutton').element() as HTMLInputElement;
+    input.value = '9.1';
+    input.dispatchEvent(new Event('input', { bubbles: true }));
+
+    expect(handleInput).toHaveBeenCalledTimes(1);
+  });
 });

@@ -49,4 +49,19 @@ describe('TextInput', () => {
     expect(handleKeyDown).toHaveBeenCalledTimes(1);
     expect(handleKeyDown).toHaveReturnedWith(true);
   });
+
+  it('forwards onInput for restricted number input', () => {
+    const handleInput = vi.fn();
+    const screen = render(TextInput, {
+      type: 'number',
+      prohibitFraction: true,
+      onInput: handleInput
+    });
+
+    const input = screen.getByRole('spinbutton').element() as HTMLInputElement;
+    input.value = '12.5';
+    input.dispatchEvent(new Event('input', { bubbles: true }));
+
+    expect(handleInput).toHaveBeenCalledTimes(1);
+  });
 });
