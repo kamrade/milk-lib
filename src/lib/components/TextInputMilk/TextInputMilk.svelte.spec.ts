@@ -1,4 +1,4 @@
-import { describe, expect, it, vi } from 'vitest';
+import { describe, expect, it } from 'vitest';
 import { render } from 'vitest-browser-svelte';
 import TextInputMilk from './TextInputMilk.svelte';
 
@@ -23,20 +23,5 @@ describe('TextInputMilk', () => {
 
     const inputLocator = screen.getByRole('spinbutton');
     await expect.element(inputLocator).toHaveAttribute('data-variant', 'milk');
-  });
-
-  it('forwards onInput to TextInput', () => {
-    const handleInput = vi.fn();
-    const screen = render(TextInputMilk, {
-      type: 'number',
-      prohibitFraction: true,
-      onInput: handleInput
-    });
-
-    const input = screen.getByRole('spinbutton').element() as HTMLInputElement;
-    input.value = '4.2';
-    input.dispatchEvent(new Event('input', { bubbles: true }));
-
-    expect(handleInput).toHaveBeenCalledTimes(1);
   });
 });

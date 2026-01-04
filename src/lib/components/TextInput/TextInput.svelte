@@ -8,7 +8,6 @@
     onFocus,
     onBlur,
     onChange,
-    onInput,
     onClick,
     placeholder,
     type = 'text',
@@ -98,8 +97,6 @@
       target.value = sanitizedValue;
       value = sanitizedValue;
     }
-
-    onInput?.(event);
   };
 
 </script>

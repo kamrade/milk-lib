@@ -14,7 +14,7 @@ export interface ITextInputProps {
   onFocus?: FocusEventHandler<HTMLInputElement>;
   onBlur?: FocusEventHandler<HTMLInputElement>;
   onChange?: ChangeEventHandler<HTMLInputElement>;
-  onInput?: ChangeEventHandler<HTMLInputElement>;
+  oninput?: ChangeEventHandler<HTMLInputElement>;
   onClick?: MouseEventHandler<HTMLInputElement>;
   placeholder?: string;
   type?: TextInputType;
