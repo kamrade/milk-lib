@@ -8,6 +8,7 @@
     onFocus,
     onBlur,
     onChange,
+    onInput,
     onClick,
     placeholder,
     type = 'text',
@@ -82,7 +83,7 @@
     onKeyDown?.(event as KeyboardEvent & { currentTarget: EventTarget & HTMLInputElement });
   };
 
-  const handleInput = (event: Event) => {
+  const handleInput = (event: Event & { currentTarget: EventTarget & HTMLInputElement; }) => {
     if (!shouldRestrictNumberInput()) {
       return;
     }
@@ -97,6 +98,8 @@
       target.value = sanitizedValue;
       value = sanitizedValue;
     }
+
+    onInput?.(event);
   };
 
 </script>
