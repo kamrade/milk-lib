@@ -212,6 +212,7 @@
       box-shadow: none;
       &:read-only {
         border-color: var(--border-color-focus);
+        cursor: default;
       }
     }
 
@@ -227,6 +228,7 @@
       border-bottom-width: var(--border-bottom-width-readonly);
       border-right-width: var(--border-right-width-readonly);
       border-left-width: var(--border-left-width-readonly);
+      cursor: default;
     }
 
     &:disabled {
