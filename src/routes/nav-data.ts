@@ -38,6 +38,7 @@ export const navigationData: INavigationItem[] = [
 
   { type: 'heading', label: 'Select' },
   { type: 'link', label: 'Select Base', link: '/showcase/select' },
+  { type: 'link', label: 'Select Variants', link: '/showcase/select-variants' },
   { type: 'link', label: 'Select Flat', link: '/showcase/select-flat' },
   { type: 'link', label: 'Select Inner Loading', link: '/showcase/select-inner-loading' },
   { type: 'link', label: 'Select Loading', link: '/showcase/select-loading' },

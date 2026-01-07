@@ -1,3 +1,5 @@
+import type { TextInputMilkSizes, TextInputMilkVariants } from '$lib/components/TextInputMilk/TextInputMilk.types';
+
 export interface ISelectItem {
   title: string;
   value: string;
@@ -18,5 +20,7 @@ export interface ISelectProps {
   minWidthMenu?: number;
   menuGap?: number;
   menuMaxHeight?: number;
+  size?: TextInputMilkSizes;
+  variant?: TextInputMilkVariants;
   onClear?: () => void;
 }

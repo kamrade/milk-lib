@@ -29,7 +29,9 @@
     menuGap,
     menuMaxHeight,
     searchable=true,
-    onClear
+    onClear,
+    size='lg',
+    variant='contained'
   }: ISelectProps = $props();
 
   const menuId = `select-menu-${crypto.randomUUID()}`;
@@ -173,8 +175,8 @@
     onClear={onClear ? handleClear : undefined}
     pseudoFocus={isMenuVisible}
     onClick={handleControlClick}
-    variant="contained"
-    size="lg"
+    variant={variant}
+    size={size}
     placeholder={placeholder}
     bind:value={currentTitle}
     bind:this={textInputBlock}
