@@ -18,7 +18,7 @@ export type CheckboxOption = {
 export type CheckboxGroupItem = CheckboxOption | CheckboxGroupHeader;
 
 export type CheckboxGroupProps = {
-  legend: string;
+  legend?: string;
   options: CheckboxGroupItem[];
   selectedValues: string[],
   name: string;

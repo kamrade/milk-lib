@@ -4,7 +4,7 @@
   import { Checkbox } from '$lib';
 
   let {
-    legend = 'Choose options',
+    legend,
     options = [] as CheckboxGroupItem[],
     selectedValues = $bindable([] as string[]),
     name,
