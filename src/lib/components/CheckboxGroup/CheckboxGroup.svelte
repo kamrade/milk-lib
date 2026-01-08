@@ -9,7 +9,8 @@
     selectedValues = $bindable([] as string[]),
     name,
     maxHeight,
-    emptyText = 'No option for choice'
+    emptyText = 'No option for choice',
+    borderless
   }: CheckboxGroupProps = $props();
 
   const maxHeightValue = $derived.by(() => {
@@ -32,7 +33,7 @@
   }
 </script>
 
-<fieldset class="checkbox-group">
+<fieldset class={`checkbox-group ${borderless ? 'borderless' : ''}`}>
   {#if legend}
     <legend>{legend}</legend>
   {/if}
@@ -96,6 +97,14 @@
     border: 1px solid var(--line-base, #e2e2e2);
     border-radius: 10px;
     background: var(--bg-base, #fff);
+
+    &.borderless {
+      border-radius: 0;
+      border: none;
+      padding: 0 0 1rem;
+      border-bottom:  1px solid var(--line-base);
+      margin-bottom: 1rem;
+    }
   }
 
   legend {
