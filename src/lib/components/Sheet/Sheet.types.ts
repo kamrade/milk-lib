@@ -8,6 +8,7 @@ export interface ISheetProps {
   side?: 'left' | 'right' | 'top' | 'bottom';
   size?: number;
   backdrop?: boolean;
+  bordered?: boolean;
 }
 
 export interface ISheetHeaderProps {

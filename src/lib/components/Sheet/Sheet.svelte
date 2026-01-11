@@ -17,17 +17,19 @@
     hideOnClickOutside,
     side = 'right',
     size = 400,
-    backdrop = false
+    backdrop = false,
+    bordered = false
   }: ISheetProps = $props();
 
   let sheetElement = $state<HTMLDivElement | null>(null)
   let shouldRender = $state(isOpen);
 
   const sheetClassNames = $derived(`Sheet Sheet-${side}`);
-  const sheetSizeStyle = $derived(
-    side === 'left' || side === 'right'
+  const sheetStyle = $derived(
+    (side === 'left' || side === 'right'
       ? `width: ${size}px;`
-      : `height: ${size}px;`
+      : `height: ${size}px;`) +
+    ` --sheet-border-size: ${bordered ? '1px' : '0px'};`
   );
   const backdropStyle = $derived(
     side === 'left'
@@ -94,7 +96,7 @@
     {/if}
     <div
       class={sheetClassNames}
-      style={sheetSizeStyle}
+      style={sheetStyle}
       bind:this={sheetElement}
       ontransitionend={handleTransitionEnd}
     >
@@ -132,6 +134,7 @@
     display: flex;
     flex-direction: column;
     overflow: hidden;
+    --sheet-border-size: 1px;
 
     @media (max-width: 400px) {
       width: 100%;
@@ -140,14 +143,14 @@
     &.Sheet-right {
       right: 0;
       left: auto;
-      border-left: 1px solid var(--line-base);
+      border-left: var(--sheet-border-size) solid var(--line-base);
       transform: translateX(110%);
     }
 
     &.Sheet-left {
       left: 0;
       right: auto;
-      border-right: 1px solid var(--line-base);
+      border-right: var(--sheet-border-size) solid var(--line-base);
       transform: translateX(-110%);
     }
 
@@ -158,7 +161,7 @@
       right: 0;
       width: 100vw;
       height: 400px;
-      border-bottom: 1px solid var(--line-base);
+      border-bottom: var(--sheet-border-size) solid var(--line-base);
       transform: translateY(-110%);
     }
 
@@ -169,7 +172,7 @@
       right: 0;
       width: 100vw;
       height: 400px;
-      border-top: 1px solid var(--line-base);
+      border-top: var(--sheet-border-size) solid var(--line-base);
       transform: translateY(110%);
     }
 
