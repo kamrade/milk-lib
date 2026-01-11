@@ -5,7 +5,8 @@ export interface ISheetProps {
   isOpen: boolean;
   hide?: () => unknown;
   hideOnClickOutside?: boolean;
-  side?: 'left' | 'right';
+  side?: 'left' | 'right' | 'top' | 'bottom';
+  size?: number;
 }
 
 export interface ISheetHeaderProps {

@@ -10,12 +10,17 @@
   import { onDestroy, onMount } from "svelte";
   import { browser } from "$app/environment";
 
-  let { children, isOpen, hide, hideOnClickOutside, side = 'right' }: ISheetProps = $props();
+  let { children, isOpen, hide, hideOnClickOutside, side = 'right', size = 400 }: ISheetProps = $props();
 
   let sheetElement = $state<HTMLDivElement | null>(null)
   let shouldRender = $state(isOpen);
 
   const sheetClassNames = $derived(`Sheet Sheet-${side}`);
+  const sheetSizeStyle = $derived(
+    side === 'left' || side === 'right'
+      ? `width: ${size}px;`
+      : `height: ${size}px;`
+  );
 
   const handleClickOutside = (event: MouseEvent) => {
     clickOutsideObject(event, sheetElement as HTMLElement, null, () => hide?.());
@@ -66,6 +71,7 @@
   {#if shouldRender}
     <div 
       class={sheetClassNames} 
+      style={sheetSizeStyle}
       bind:this={sheetElement} 
       ontransitionend={handleTransitionEnd}
     >
@@ -108,8 +114,30 @@
       transform: translateX(-110%);
     }
 
+    &.Sheet-top {
+      top: 0;
+      bottom: auto;
+      left: 0;
+      right: 0;
+      width: 100vw;
+      height: 400px;
+      border-bottom: 1px solid var(--line-base);
+      transform: translateY(-110%);
+    }
+
+    &.Sheet-bottom {
+      top: auto;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 100vw;
+      height: 400px;
+      border-top: 1px solid var(--line-base);
+      transform: translateY(110%);
+    }
+
     &.Sheet-open {
-      transform: translateX(0);
+      transform: translate3d(0, 0, 0);
       opacity: 1;
     }
   }

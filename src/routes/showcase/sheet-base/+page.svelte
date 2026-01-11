@@ -18,9 +18,9 @@
 
   let isSheetShowed = $state<boolean>(false);
   let isModalShowed = $state<boolean>(false);
-  let sheetSide = $state<'left' | 'right'>('right');
+  let sheetSide = $state<'left' | 'right' | 'top' | 'bottom'>('right');
 
-  const showSheet = (side: 'left' | 'right' = 'right') => {
+  const showSheet = (side: 'left' | 'right' | 'top' | 'bottom' = 'right') => {
     sheetSide = side;
     isSheetShowed = true;
   };
@@ -39,6 +39,12 @@
 </ButtonMilk>
 <ButtonMilk size="md" variant="base-emphasis" onClick={() => showSheet('right')} style="margin-right: 12px;">
   Open Sheet (right)
+</ButtonMilk>
+<ButtonMilk size="md" variant="base-emphasis" onClick={() => showSheet('top')}>
+  Open Sheet (top)
+</ButtonMilk>
+<ButtonMilk size="md" variant="base-emphasis" onClick={() => showSheet('bottom')} style="margin-right: 12px;">
+  Open Sheet (bottom)
 </ButtonMilk>
 
 {#if browser}
