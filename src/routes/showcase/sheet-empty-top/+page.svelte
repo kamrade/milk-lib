@@ -30,7 +30,7 @@
 </ButtonMilk>
 
 {#if browser}
-  <Sheet isOpen={isSheetShowed} hide={hideSheet} side={sheetSide} hideOnClickOutside size={100}>
+  <Sheet isOpen={isSheetShowed} hide={hideSheet} side={sheetSide} hideOnClickOutside size={100} backdrop>
 
     <SheetContent>
       <TextInputBlock size="lg" autoFocus placeholder="Search" variant="text">

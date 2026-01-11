@@ -20,6 +20,7 @@
 
   --bg-base: #fff;
   --bg-backdrop: rgba(0,0,0,0.5);
+  --bg-backdrop-light: rgba(255,255,255,0.5);
 
   --bg-base-100: #EDEEF0;
   --bg-base-200: #E2E4E8;
@@ -96,7 +97,7 @@
   --zindex-dropdown: 1060;
   --zindex-sticky: 1020;
   --zindex-fixed: 1030;
-  --zindex-sheet: 1035;
+  --zindex-sheet: 1041;
   --zindex-offcanvas-backdrop: 1040;
   --zindex-offcanvas: 1045;
   --zindex-modal-backdrop: 1050;

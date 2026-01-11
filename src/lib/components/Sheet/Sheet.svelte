@@ -10,7 +10,15 @@
   import { onDestroy, onMount } from "svelte";
   import { browser } from "$app/environment";
 
-  let { children, isOpen, hide, hideOnClickOutside, side = 'right', size = 400 }: ISheetProps = $props();
+  let {
+    children,
+    isOpen,
+    hide,
+    hideOnClickOutside,
+    side = 'right',
+    size = 400,
+    backdrop = false
+  }: ISheetProps = $props();
 
   let sheetElement = $state<HTMLDivElement | null>(null)
   let shouldRender = $state(isOpen);
@@ -20,6 +28,15 @@
     side === 'left' || side === 'right'
       ? `width: ${size}px;`
       : `height: ${size}px;`
+  );
+  const backdropStyle = $derived(
+    side === 'left'
+      ? `left: 0; right: 0; top: 0; bottom: 0;`
+      : side === 'right'
+        ? `left: 0; right: 0; top: 0; bottom: 0;`
+        : side === 'top'
+          ? `left: 0; right: 0; top: 0; bottom: 0;`
+          : `left: 0; right: 0; top: 0; bottom: 0;`
   );
 
   const handleClickOutside = (event: MouseEvent) => {
@@ -69,10 +86,16 @@
 
 <Portal>
   {#if shouldRender}
-    <div 
-      class={sheetClassNames} 
+    {#if backdrop}
+      <div
+        class={`Sheet-backdrop ${isOpen ? "Sheet-backdrop-open" : ""}`}
+        style={backdropStyle}
+      ></div>
+    {/if}
+    <div
+      class={sheetClassNames}
       style={sheetSizeStyle}
-      bind:this={sheetElement} 
+      bind:this={sheetElement}
       ontransitionend={handleTransitionEnd}
     >
       {@render children()}
@@ -81,6 +104,20 @@
 </Portal>
 
 <style lang="scss">
+  .Sheet-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: var(--zindex-offcanvas-backdrop);
+    background-color: var(--bg-backdrop-light);
+    backdrop-filter: blur(8px);
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+  }
+
+  .Sheet-backdrop-open {
+    opacity: 1;
+  }
+
   .Sheet {
     position: fixed;
     z-index: var(--zindex-sheet);

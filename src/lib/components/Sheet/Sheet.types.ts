@@ -7,6 +7,7 @@ export interface ISheetProps {
   hideOnClickOutside?: boolean;
   side?: 'left' | 'right' | 'top' | 'bottom';
   size?: number;
+  backdrop?: boolean;
 }
 
 export interface ISheetHeaderProps {
