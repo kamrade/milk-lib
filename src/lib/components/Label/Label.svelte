@@ -19,5 +19,6 @@
     font-size: var(--font-size);
     line-height: var(--line-height);
     margin-bottom: var(--margin-bottom);
+    color: var(--text-base-muted);
   }
 </style>
