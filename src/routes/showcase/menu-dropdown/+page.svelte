@@ -2,7 +2,7 @@
   import { Menu, MenuContent, MenuItem, MenuItemTitle, ButtonMilk } from "$lib";
   import { PageTitle, Divider } from '$layout';
 
-	let label = "Выберите город";
+	let label = "Click me";
 	let menuWrapperElementHover: HTMLDivElement;
 	let isHoverMenuVisible = false;
 	let menuHoverElement: HTMLDivElement;
@@ -20,48 +20,56 @@
 <PageTitle>Menu. Show on click</PageTitle>
 <Divider/>
 
-<div class={`dropdown-toggler ${isHoverMenuVisible ? "dropdown-toggler-hover" : ""}`}
-  bind:this={menuWrapperElementHover}
-  role="button" tabindex="-1"
->
-
-
-  <ButtonMilk onClick={mouseEnterHandler} variant="primary-emphasis" size="lg">{label}</ButtonMilk>
-  
-  <Menu
-    bind:menuElement={menuHoverElement}
-    appearanceOnHover={false}
-    isVisible={isHoverMenuVisible}
-    hideMenu={hideHoverMenu}
-    parentElement={menuWrapperElementHover}
-    minWidth={500}
-    menuGap={0}
-    fullWidth
+<div class="wrapper">
+  <div class={`dropdown-toggler ${isHoverMenuVisible ? "dropdown-toggler-hover" : ""}`}
+    bind:this={menuWrapperElementHover}
+    role="button" tabindex="-1"
   >
 
-    
-      <div class="menu-content">
-        This is a Menu content
-      </div>
-    
 
-  </Menu>
+    <ButtonMilk onClick={mouseEnterHandler} variant="base-emphasis" size="md">{label}</ButtonMilk>
+    
+    <Menu
+      bind:menuElement={menuHoverElement}
+      appearanceOnHover={false}
+      isVisible={isHoverMenuVisible}
+      hideMenu={hideHoverMenu}
+      parentElement={menuWrapperElementHover}
+      minWidth={500}
+      menuGap={0}
+      fullWidth
+      animate
+    >
 
+      
+        <div class="menu-content">
+          This is a Menu content
+        </div>
+      
+
+    </Menu>
+
+  </div>
 </div>
 
 <style>
+
+  .wrapper {
+    padding: 2rem;
+    background: var(--bg-base-100);
+  }
 
 	.dropdown-toggler {
 		display: flex;
 		position: relative;
     padding: 1rem;
-    background: var(--bg-base-100);
+    background: var(--bg-base);
 	}
 
   .menu-content {
     padding: 2rem 1rem;
     background: var(--bg-base);
-    box-shadow: 0 0 30px rgba(0,0,0,0.1);
+    box-shadow: 0 12px 20px rgba(0,0,0,0.05);
   }
 
 </style>

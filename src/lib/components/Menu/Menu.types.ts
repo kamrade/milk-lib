@@ -13,6 +13,7 @@ export interface IMenuProps {
   width?: number;
   minWidth?: number;
   fullWidth?: boolean;
+  animate?: boolean;
   
   id?: string;
   children: Snippet;

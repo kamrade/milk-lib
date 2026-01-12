@@ -16,6 +16,7 @@
     width = 0,
     fullWidth,
     minWidth = 320,
+    animate = false,
     id,
     children
   }: IMenuProps = $props();
@@ -70,26 +71,25 @@
 
 <svelte:window bind:innerWidth bind:innerHeight bind:scrollY />
 
-{#if isVisible}
-  <div
-    {id}
-    role="menu"
-    tabindex="0"
-    onmouseleave={mouseLeaveHandler}
-    bind:this={menuElement}
-    class="Menu"
-    style={`
-      top: ${y}px;
-      width: ${fullWidth ? '100%' : width ? width + "px" : "auto"};
-      min-width: ${minWidth ? minWidth + "px" : "auto"};
-      max-height: ${maxHeight}px;
-    `}
-  >
-    <div style={`padding-top: ${menuGap}px`}>
-      {@render children()}
-    </div>
+<div
+  {id}
+  role="menu"
+  tabindex={isVisible ? 0 : -1}
+  aria-hidden={!isVisible}
+  onmouseleave={mouseLeaveHandler}
+  bind:this={menuElement}
+  class={`Menu ${isVisible ? "Menu-open" : "Menu-closed"} ${animate ? "Menu-animate" : ""}`}
+  style={`
+    top: ${y}px;
+    width: ${fullWidth ? '100%' : width ? width + "px" : "auto"};
+    min-width: ${minWidth ? minWidth + "px" : "auto"};
+    max-height: ${maxHeight}px;
+  `}
+>
+  <div style={`padding-top: ${menuGap}px`}>
+    {@render children()}
   </div>
-{/if}
+</div>
 
 <style>
   .Menu {
@@ -105,10 +105,37 @@
     gap: 0;
     justify-content: space-between;
     cursor: default;
+    transform-origin: top;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(-8px) scale(0.98);
 
     &:focus-visible {
       outline: none;
     }
+  }
+
+  .Menu.Menu-animate {
+    transition: opacity .22s ease-out, transform .22s ease-out, visibility 0s linear .22s;
+  }
+
+  .Menu.Menu-animate.Menu-open {
+    transition-delay: 0s;
+  }
+
+  .Menu.Menu-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .Menu.Menu-closed {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(-8px);
   }
 
 </style>
