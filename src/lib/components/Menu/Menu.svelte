@@ -5,7 +5,7 @@
   import { clickOutsideObject } from "$lib";
   import type { IMenuProps } from "./Menu.types";
 
-    let {
+  let {
     hideMenu,
     parentElement,
     menuGap = 6,
