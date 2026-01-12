@@ -60,7 +60,8 @@
 
   .menu-content {
     padding: 2rem 1rem;
-    background: var(--bg-base-200);
+    background: var(--bg-base);
+    box-shadow: 0 0 30px rgba(0,0,0,0.1);
   }
 
 </style>
