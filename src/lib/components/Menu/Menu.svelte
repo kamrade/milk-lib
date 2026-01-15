@@ -32,7 +32,15 @@
   };
 
   const mouseLeaveHandler = (e: MouseEvent) => {
-    if ((e.relatedTarget !== parentElement) && appearanceOnHover) {
+    if (!appearanceOnHover) return;
+
+    const nextTarget = e.relatedTarget as Node | null;
+    if (!nextTarget) {
+      hideMenu();
+      return;
+    }
+
+    if (!parentElement?.contains(nextTarget) && !menuElement?.contains(nextTarget)) {
       hideMenu();
     }
   };

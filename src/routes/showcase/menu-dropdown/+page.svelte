@@ -2,7 +2,7 @@
   import { Menu, MenuContent, MenuItem, MenuItemTitle, ButtonMilk } from "$lib";
   import { PageTitle, Divider } from '$layout';
 
-	let label = "Click me";
+	let label = "Hover me";
 	let menuWrapperElementHover: HTMLDivElement;
 	let isHoverMenuVisible = false;
 	let menuHoverElement: HTMLDivElement;
@@ -17,21 +17,23 @@
 	};
 </script>
 
-<PageTitle>Menu. Show on click</PageTitle>
+<PageTitle>Menu. Dropdown on hover</PageTitle>
 <Divider/>
 
 <div class="wrapper">
   <div class={`dropdown-toggler ${isHoverMenuVisible ? "dropdown-toggler-hover" : ""}`}
     bind:this={menuWrapperElementHover}
+    
     role="button" tabindex="-1"
   >
 
 
-    <ButtonMilk onClick={mouseEnterHandler} variant="base-emphasis" size="md">{label}</ButtonMilk>
+    <ButtonMilk
+      onClick={mouseEnterHandler}
+      variant="base-emphasis" size="md">{label}</ButtonMilk>
     
     <Menu
       bind:menuElement={menuHoverElement}
-      appearanceOnHover={false}
       isVisible={isHoverMenuVisible}
       hideMenu={hideHoverMenu}
       parentElement={menuWrapperElementHover}

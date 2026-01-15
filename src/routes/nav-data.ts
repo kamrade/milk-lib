@@ -14,6 +14,7 @@ export const navigationData: INavigationItem[] = [
   
   { type: 'heading', label: 'Basic' },
   { type: 'link', label: 'Menu', link: '/showcase/menu-on-click' },
+  { type: 'link', label: 'Menu Hover', link: '/showcase/menu-on-hover' },
   { type: 'link', label: 'Menu Dropdown', link: '/showcase/menu-dropdown' },
   
   { type: 'heading', label: 'Button' },
