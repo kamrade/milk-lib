@@ -11,6 +11,7 @@ export interface IButtonProps {
   onClick?: (e: MouseEvent) => void;
   onMouseEnter?: (e: MouseEvent) => void;
   onMouseLeave?: (e: MouseEvent) => void;
+  'aria-label'?: string;
   classNames?: string;
   disabled?: boolean;
   type?: ButtonType;
