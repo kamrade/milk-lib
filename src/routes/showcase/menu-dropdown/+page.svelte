@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Menu, MenuContent, MenuItem, MenuItemTitle, ButtonMilk } from "$lib";
+  import { Menu, ButtonMilk } from "$lib";
   import { PageTitle, Divider } from '$layout';
 
 	let label = "Hover me";
@@ -21,17 +21,17 @@
 <Divider/>
 
 <div class="wrapper">
+  
+  
+  
   <div class={`dropdown-toggler ${isHoverMenuVisible ? "dropdown-toggler-hover" : ""}`}
     bind:this={menuWrapperElementHover}
-    
     role="button" tabindex="-1"
   >
-
-
     <ButtonMilk
       onClick={mouseEnterHandler}
-      variant="base-emphasis" size="md">{label}</ButtonMilk>
-    
+      variant="base-emphasis" size="md">{label}
+    </ButtonMilk>
     <Menu
       bind:menuElement={menuHoverElement}
       isVisible={isHoverMenuVisible}
@@ -42,16 +42,15 @@
       fullWidth
       animate
     >
-
-      
-        <div class="menu-content">
-          This is a Menu content
-        </div>
-      
-
+      <div class="menu-content">
+        This is a Menu content
+      </div>
     </Menu>
-
   </div>
+
+
+
+
 </div>
 
 <style>

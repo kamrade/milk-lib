@@ -21,6 +21,7 @@ export const navigationData: INavigationItem[] = [
   { type: 'link', label: 'Button Primitive', link: '/showcase/button-primitive' },
   { type: 'link', label: 'Button Icon', link: '/showcase/button-icon' },
   { type: 'link', label: 'Button Milk', link: '/showcase/button-milk' },
+  { type: 'link', label: 'Button Overlay', link: '/showcase/button-overlay' },
   
   { type: 'heading', label: 'TextInput' },
   { type: 'link', label: 'TextInput Primitive', link: '/showcase/text-input-primitive' },

@@ -5,6 +5,7 @@ export * from './Sidebar';
 export * from './ThemeProvider';
 export * from './Button';
 export * from './ButtonMilk';
+export * from './ButtonOverlay';
 export * from './Badge';
 export * from './Label';
 export * from './TextInput';
