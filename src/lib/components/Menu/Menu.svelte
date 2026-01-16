@@ -17,6 +17,7 @@
     fullWidth,
     minWidth = 320,
     animate = false,
+    onTransitionEnd,
     id,
     children
   }: IMenuProps = $props();
@@ -85,6 +86,7 @@
   tabindex={isVisible ? 0 : -1}
   aria-hidden={!isVisible}
   onmouseleave={mouseLeaveHandler}
+  ontransitionend={onTransitionEnd}
   bind:this={menuElement}
   class={`Menu ${isVisible ? "Menu-open" : "Menu-closed"} ${animate ? "Menu-animate" : ""}`}
   style={`

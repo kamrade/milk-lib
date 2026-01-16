@@ -14,6 +14,8 @@ export interface IMenuProps {
   minWidth?: number;
   fullWidth?: boolean;
   animate?: boolean;
+
+  onTransitionEnd?: (e: TransitionEvent) => void;
   
   id?: string;
   children: Snippet;

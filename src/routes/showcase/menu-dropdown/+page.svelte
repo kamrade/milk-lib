@@ -34,6 +34,7 @@
     </ButtonMilk>
     <Menu
       bind:menuElement={menuHoverElement}
+      appearanceOnHover
       isVisible={isHoverMenuVisible}
       hideMenu={hideHoverMenu}
       parentElement={menuWrapperElementHover}
@@ -41,6 +42,7 @@
       menuGap={0}
       fullWidth
       animate
+      onTransitionEnd={(e: TransitionEvent) => console.log("transitionend", e.propertyName)}
     >
       <div class="menu-content">
         This is a Menu content
