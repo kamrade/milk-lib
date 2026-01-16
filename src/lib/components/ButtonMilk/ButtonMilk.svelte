@@ -28,6 +28,7 @@
     : variant === "base-contained" ? "Button-base-contained"
     : variant === "base-outlined" ? "Button-base-outlined"
     : variant === "base-emphasis" ? "Button-base-emphasis"
+    : variant === "base-text" ? "Button-base-text"
     : variant === "danger-contained" ? "Button-danger-contained"
     : variant === "danger-outlined" ? "Button-danger-outlined"
     : variant === "danger-emphasis" ? "Button-danger-emphasis" : ""

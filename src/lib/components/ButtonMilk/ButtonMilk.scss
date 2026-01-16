@@ -22,6 +22,14 @@
 --focus-color: var(--line-base-emp);
 }
 
+.Button.Button-base-text[data-variant="milk"] {
+--background-color: #fff;
+--hover-background: var(--bg-base-200);
+--active-background: var(--bg-base-300);
+--color: var(--text-base-main);
+--focus-color: var(--line-base-emp);
+}
+
 .Button.Button-danger-contained[data-variant="milk"] {
 --background-color: var(--bg-danger-100);
 --hover-background: var(--bg-danger-200);

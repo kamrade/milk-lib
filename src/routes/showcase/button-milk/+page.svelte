@@ -12,6 +12,7 @@
     "base-contained",
     "base-outlined",
     "base-emphasis",
+    "base-text",
     "danger-contained",
     "danger-outlined",
     "danger-emphasis"
@@ -74,6 +75,7 @@
   <ButtonMilk variant="base-contained" size="lg"><CheckboxCircleFillSystem size="1em"/>Base contained milk button</ButtonMilk>
   <ButtonMilk variant="base-outlined" size="lg">Base outlined milk button</ButtonMilk>
   <ButtonMilk variant="base-emphasis" size="lg">Base emphasis milk button</ButtonMilk>
+  <ButtonMilk variant="base-text" size="lg">Base text milk button</ButtonMilk>
 </div>
 
 <div class='showcase-block'>
