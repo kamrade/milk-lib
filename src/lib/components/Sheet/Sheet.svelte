@@ -136,8 +136,8 @@
     overflow: hidden;
     --sheet-border-size: 1px;
 
-    @media (max-width: 400px) {
-      width: 100%;
+    @media (max-width: 480px) {
+      width: 100% !important;
     }
 
     &.Sheet-right {
